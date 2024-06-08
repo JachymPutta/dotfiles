@@ -30,4 +30,8 @@
   };
 
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
+  xdg.configFile.nvim = {  
+    source = ./extras/nvim;  
+    recursive = true;  
+  };
 }

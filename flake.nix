@@ -8,6 +8,11 @@
     ghostty = {
       url = "git+ssh://git@github.com/ghostty-org/ghostty";
     };
+
+    nest-nvim = {
+      url = "github:lionc/nest.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }: 
@@ -16,6 +21,13 @@
       overlay = 
         final: prev: {
           ghostty = inputs.ghostty.packages.${system}.default;
+          vimPlugins = prev.vimPlugins // {
+            nest-nvim = prev.vimUtils.buildVimPlugin {
+              name = "nest.nvim";
+              pname = "nest-nvim";
+              src = inputs.nest-nvim;
+            };
+          };
         };
     in
   {

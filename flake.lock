@@ -156,6 +156,22 @@
         "url": "https://raw.githubusercontent.com/ziglang/zig/54bbc73f8502fe073d385361ddb34a43d12eec39/doc/langref.html.in"
       }
     },
+    "nest-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1632691365,
+        "narHash": "sha256-A0+PdIU5P5EQuonJZpIpinGe1fzXiy7oQ5wvCLoN/fk=",
+        "owner": "lionc",
+        "repo": "nest.nvim",
+        "rev": "e5da827a3adfb383b56587bdf4eb62fae4154364",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lionc",
+        "repo": "nest.nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1717179513,
@@ -208,6 +224,7 @@
       "inputs": {
         "ghostty": "ghostty",
         "home-manager": "home-manager",
+        "nest-nvim": "nest-nvim",
         "nixpkgs": "nixpkgs"
       }
     },
