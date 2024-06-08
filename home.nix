@@ -2,6 +2,12 @@
 
 {
   programs.home-manager.enable = true;
+  systemd.user.startServices = "sd-switch";
+
+  home = {
+    username = "jachym";
+    homeDirectory = "/home/jachym";
+  };
 
   home.sessionVariables = { 
   	EDITOR = "nvim";
@@ -24,7 +30,7 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch";
+      update = "sudo nixos-rebuild switch --flake .#jachym -L";
     };
     history = {
       size = 10000;
@@ -35,6 +41,11 @@
       plugins = [ "git" ];
       theme = "robbyrussell";
     };
+  };
+
+  programs.ghostty = {
+    enable = true;
+    extraConfig = builtins.readFile ./ghostty/config;
   };
 
   programs.atuin.enableZshIntegration = true;
