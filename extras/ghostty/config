@@ -1,11 +1,11 @@
 # keybind = super+comma=open_config
 # macos-non-native-fullscreen = visible-menu
 
-# Movement	w
-# keybind = ctrl+l=goto_split:right
-# keybind = ctrl+j=goto_split:bottom
-# keybind = ctrl+h=goto_split:left
-# keybind = ctrl+k=goto_split:top
+# Movement
+keybind = ctrl+shift+l=goto_split:right
+keybind = ctrl+shift+j=goto_split:bottom
+keybind = ctrl+shift+h=goto_split:left
+keybind = ctrl+shift+k=goto_split:top
 
 # Splits
 # keybind = super+d=new_split:right
