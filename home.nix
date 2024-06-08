@@ -31,7 +31,7 @@
     };
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" ];
+      plugins = [ "git" ];
       theme = "robbyrussell";
     };
   };
