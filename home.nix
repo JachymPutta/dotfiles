@@ -10,6 +10,7 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
+    ghostty
     ripgrep
     tmate
     zsh
