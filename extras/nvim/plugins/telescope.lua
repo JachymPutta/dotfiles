@@ -1,4 +1,4 @@
-local options = {
+require("telescope").setup {
   defaults = {
     vimgrep_arguments = {
       "rg",
@@ -59,6 +59,3 @@ local options = {
     },
   },
 }
-
-return options
-
