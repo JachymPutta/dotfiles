@@ -8,6 +8,7 @@
       plenary-nvim
       telescope-nvim
       nest-nvim
+      nvim-treesitter
     ];
     extraConfig = let
       luaRequire = module: builtins.readFile (builtins.toString
@@ -16,6 +17,7 @@
         "core/mappings"
         "core/init"
         "plugins/telescope"
+        "plugins/treesitter"
       ]);
     in ''
       lua << 
