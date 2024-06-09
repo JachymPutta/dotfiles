@@ -1,7 +1,6 @@
-require("nvim-treesitter.configs").setup {
+require('nvim-treesitter.configs').setup {
   ensure_installed = {
     "vim",
-    "help",
     "lua",
     "html",
     "css",
@@ -14,7 +13,7 @@ require("nvim-treesitter.configs").setup {
     "markdown",
     "markdown_inline",
     "bash",
-  }
+  },
 
   auto_install = true,
 
@@ -22,7 +21,7 @@ require("nvim-treesitter.configs").setup {
     enable = true,
     use_languagetree = true,
     additional_vim_regex_highlighting = false,
-  }
+  },
 
   indent = { enable = true },
 }
