@@ -29,7 +29,11 @@
       yazi
 
       # C
-      clang
+      # clang
+      gcc
+      automake
+      autoconf
+      gnumake
       valgrind
       perf-tools
       cmake
@@ -38,6 +42,15 @@
       rust-analyzer
       rustc
       cargo
+
+      # Typst
+      typst-lsp
+
+      # Python
+      (python3.withPackages (python-pkgs: [
+        python-pkgs.pandas
+        python-pkgs.requests
+      ]))
     ];
   };
 

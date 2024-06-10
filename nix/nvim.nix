@@ -11,7 +11,11 @@
 
       # Lsp
       rustaceanvim
+      nvim-lspconfig
       nvim-dap
+
+      #Typst 
+      typst-vim
 
       #nvim-treesitter.withAllGrammars
       (nvim-treesitter.withPlugins
@@ -25,6 +29,7 @@
             tree-sitter-javascript
             tree-sitter-java
             tree-sitter-typescript
+            tree-sitter-typst
             tree-sitter-tsx
             tree-sitter-haskell
             tree-sitter-markdown

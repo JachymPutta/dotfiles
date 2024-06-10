@@ -9,7 +9,8 @@
 
     shellAliases = {
       ll = "ls -l";
-      update = "sudo nixos-rebuild switch --flake .#jachym -L";
+      # update = "sudo nixos-rebuild switch --flake .#jachym -L";
+      update = "sudo nix build .#nixosConfigurations.jachym.config.system.build.toplevel && sudo ./result/activate";
     };
     history = {
       size = 10000;
