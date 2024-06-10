@@ -21,17 +21,25 @@
       SHELL = "${pkgs.zsh}/bin/zsh";
     };
     packages = with pkgs; [
+      # Base
       ghostty
       ripgrep
       tmate
       zsh
       yazi
+
+      # C
+      clang
+      valgrind
+      perf-tools
+      cmake
+
+      # Rust
+      rust-analyzer
+      rustc
+      cargo
     ];
   };
 
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
-  xdg.configFile.nvim = {  
-    source = ./extras/nvim;  
-    recursive = true;  
-  };
 }

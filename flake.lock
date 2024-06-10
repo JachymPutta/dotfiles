@@ -220,12 +220,28 @@
         "type": "github"
       }
     },
+    "nixpkgs_master": {
+      "locked": {
+        "lastModified": 1718023118,
+        "narHash": "sha256-3s8vRLrI6Vn61bRNC1CeD4ULJ9SQ45qWhkkDLHOHA/Q=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "3dfbc634f30047c97c71ce2e5ab10d345f3af543",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "ghostty": "ghostty",
         "home-manager": "home-manager",
         "nest-nvim": "nest-nvim",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nixpkgs_master": "nixpkgs_master"
       }
     },
     "systems": {

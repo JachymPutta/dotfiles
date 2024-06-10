@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = github:NixOS/nixpkgs/24.05;
+    nixpkgs_master.url = github:NixOS/nixpkgs;
     home-manager.url = github:nix-community/home-manager/release-24.05;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     ghostty = {
@@ -15,7 +16,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }: 
+  outputs = inputs@{ nixpkgs, nixpkgs_master, home-manager, ... }: 
     let
       system = "x86_64-linux";
       overlay = 
@@ -27,7 +28,10 @@
               pname = "nest-nvim";
               src = inputs.nest-nvim;
             };
+            # rustaceanvim = inputs.rustaceanvim.overlay.default;
           };
+          neovim = nixpkgs_master.legacyPackages.${system}.neovim;
+          neovim-unwrapped = nixpkgs_master.legacyPackages.${system}.neovim-unwrapped;
         };
     in
   {
