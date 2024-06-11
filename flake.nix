@@ -51,6 +51,15 @@
         ];
       };
     };
+
+     homeConfigurations = {
+       jachym =
+         home-manager.lib.homeManagerConfiguration {
+           pkgs = import nixpkgs {overlays = [ overlay ]; system = "x86_64-linux";};
+           modules = [
+              ./home.nix
+           ];
+        };
+    };
   };
 }
-
