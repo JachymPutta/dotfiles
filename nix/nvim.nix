@@ -8,14 +8,30 @@
       plenary-nvim
       telescope-nvim
       nest-nvim
+      undotree
 
       # Lsp
       rustaceanvim
       nvim-lspconfig
       nvim-dap
 
+      # Autocomplete
+      cmp-nvim-lsp
+      nvim-cmp
+      cmp-vsnip
+      cmp-buffer
+
+      vim-vsnip
+      vim-vsnip-integ
+
       #Typst 
       typst-vim
+
+      # Copilot
+      copilot-lua
+      copilot-cmp
+      copilot-vim
+      # codeium-nvim //NOTE: unfree license, deal with it later
 
       #nvim-treesitter.withAllGrammars
       (nvim-treesitter.withPlugins
@@ -52,6 +68,7 @@
         "plugins/telescope"
         "plugins/treesitter"
         "plugins/lsp"
+        "plugins/cmp"
       ]);
     in ''
       lua << 

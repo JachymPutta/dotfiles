@@ -10,6 +10,7 @@
       url = "git+ssh://git@github.com/ghostty-org/ghostty";
     };
 
+    # Vim plugins
     nest-nvim = {
       url = "github:lionc/nest.nvim";
       flake = false;
@@ -28,7 +29,6 @@
               pname = "nest-nvim";
               src = inputs.nest-nvim;
             };
-            # rustaceanvim = inputs.rustaceanvim.overlay.default;
           };
           neovim = nixpkgs_master.legacyPackages.${system}.neovim;
           neovim-unwrapped = nixpkgs_master.legacyPackages.${system}.neovim-unwrapped;

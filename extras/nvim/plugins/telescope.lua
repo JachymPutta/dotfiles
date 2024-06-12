@@ -49,7 +49,7 @@ require("telescope").setup {
     },
   },
 
-  extensions_list = { "themes", "terms", "fzf" },
+  extensions_list = { "terms", "fzf" },
   extensions = {
     fzf = {
       fuzzy = true,

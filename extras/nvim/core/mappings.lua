@@ -9,6 +9,7 @@ vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', { noremap = true, silent 
 
 local nest = require 'nest'
 
+-- Keymaps
 nest.applyKeymaps {
   { '<leader>', {
     { 'f', {
@@ -16,9 +17,10 @@ nest.applyKeymaps {
       { 'w', '<cmd> Telescope live_grep <CR>' },
       { 'o', '<cmd> Telescope oldfiles <CR>' },
       },
-    { 'th', '<cmd> Telescope themes <CR>' },
-    }},
-  }
+    },
+    { 'u', '<cmd> UndotreeToggle <CR>' },
+  },
+  },
 }
 
 --  ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },

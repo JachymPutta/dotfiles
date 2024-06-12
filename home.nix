@@ -49,8 +49,13 @@
       # Python
       (python3.withPackages (python-pkgs: [
         python-pkgs.pandas
+        python-pkgs.numpy
+        python-pkgs.pillow
         python-pkgs.requests
       ]))
+
+      # Web
+      nodejs
     ];
   };
 
