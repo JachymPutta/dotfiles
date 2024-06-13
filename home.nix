@@ -14,7 +14,6 @@
 
   home = {
     username = if pkgs.stdenv.isDarwin then "jachymputta" else "jachym";
-    #homeDirectory = "/Users/jachymputta";
     stateVersion = "24.05";
     sessionVariables = { 
       EDITOR = "nvim";
@@ -58,7 +57,9 @@
       perf-tools
       ghostty
     ];
-  };
+  } // (if pkgs.stdenv.isLinux then {
+    homeDirectory = "/Users/jachymputta";
+  } else {});
 
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
 }
