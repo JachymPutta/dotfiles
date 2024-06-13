@@ -18,6 +18,10 @@
       url = "github:lionc/nest.nvim";
       flake = false;
     };
+    yazi-nvim = {
+      url = "github:mikavilpas/yazi.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs@{ nixpkgs, nixpkgs_master, home-manager, darwin, ... }: 
@@ -30,6 +34,11 @@
               name = "nest.nvim";
               pname = "nest-nvim";
               src = inputs.nest-nvim;
+            };
+            yazi-nvim = prev.vimUtils.buildVimPlugin {
+              name = "yazi.nvim";
+              pname = "yazi-nvim";
+              src = inputs.yazi-nvim;
             };
           };
 

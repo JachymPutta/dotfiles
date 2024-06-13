@@ -7,7 +7,6 @@
     ./nix/nvim.nix
     ./nix/zoxide.nix
     ./nix/zsh.nix
-    ./nix/yabai.nix
   ];
 
   programs.home-manager.enable = true;
@@ -59,7 +58,6 @@
       perf-tools
       ghostty
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
-      yabai
     ];
   };
 

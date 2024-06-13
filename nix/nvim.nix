@@ -7,6 +7,7 @@
       catppuccin-nvim
       plenary-nvim
       telescope-nvim
+      yazi-nvim
       nest-nvim
       undotree
       nvim-autopairs

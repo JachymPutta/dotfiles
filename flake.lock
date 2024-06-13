@@ -263,7 +263,8 @@
         "home-manager": "home-manager",
         "nest-nvim": "nest-nvim",
         "nixpkgs": "nixpkgs",
-        "nixpkgs_master": "nixpkgs_master"
+        "nixpkgs_master": "nixpkgs_master",
+        "yazi-nvim": "yazi-nvim"
       }
     },
     "systems": {
@@ -278,6 +279,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "yazi-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1718081255,
+        "narHash": "sha256-gKz84FTx3WvNw/P/GMVjp30hByL1+/nCaQHFngIvl3U=",
+        "owner": "mikavilpas",
+        "repo": "yazi.nvim",
+        "rev": "d6575eda7711d8743eeac6bc5304b60934723e54",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mikavilpas",
+        "repo": "yazi.nvim",
         "type": "github"
       }
     },
