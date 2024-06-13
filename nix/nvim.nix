@@ -33,6 +33,9 @@
       copilot-vim
       # codeium-nvim //NOTE: unfree license, deal with it later
 
+      # Comments
+      comment-nvim
+
       #nvim-treesitter.withAllGrammars
       (nvim-treesitter.withPlugins
         # tree sitter with language support

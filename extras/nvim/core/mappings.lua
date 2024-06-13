@@ -1,45 +1,47 @@
 -- Set leader key
 vim.g.mapleader = " "
 
--- Use ctrl-[hjkl] to select the active split
-vim.api.nvim_set_keymap('n', '<C-k>', ':wincmd k<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-j>', ':wincmd j<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', { noremap = true, silent = true })
-
-local nest = require 'nest'
-
 -- Keymaps
-nest.applyKeymaps {
+require'nest'.applyKeymaps {
   { '<leader>', {
     { 'f', {
       { 'f', '<cmd> Telescope find_files <CR>' },
       { 'w', '<cmd> Telescope live_grep <CR>' },
       { 'o', '<cmd> Telescope oldfiles <CR>' },
+      { 's', '<cmd> Telescope current_buffer_fuzzy_find <CR>' },
+      { 'm', '<cmd> lua vim.lsp.buf.format { async = true } <CR>', "Format" },
       },
     },
     { 'u', '<cmd> UndotreeToggle <CR>' },
+    { 'c', {
+      { 'a', '<cmd> lua vim.lsp.buf.code_action() <CR>', "Code action" },
+      { 'r', '<cmd> lua vim.diagnostic.open_float() <CR>', "Show full error" },
+      },
+    },
+    { 'ra', '<cmd> lua vim.lsp.buf.rename() <CR>', "Rename" },
+    { '/', '<cmd> lua require("Comment.api").toggle.linewise.current() <CR>', "Toggle comment" },
   },
   },
+  { 'gd', '<cmd> lua vim.lsp.buf.definition() <CR>', "Go to definition" },
+  { 'gD', '<cmd> lua vim.lsp.buf.declaration() <CR>', "Go to declaration" },
+  { 'gi', '<cmd> lua vim.lsp.buf.implementation() <CR>', "Go to implementation" },
+  { 'gr', '<cmd> lua vim.lsp.buf.references() <CR>', "Go to references" },
+  { 'K', '<cmd> lua vim.lsp.buf.hover() <CR>', "Show hover" },
+  { 'gs', '<cmd> lua vim.lsp.buf.signature_help() <CR>', "Show signature help" },
+
+  { ';', ':', "enter command mode", options = { nowait = true } },
+  { 'j', 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", options = { expr = true } },
+  { 'k', 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up", options = { expr = true } },
+  { '<Esc>', '<cmd> noh <CR>', "Clear highlights" },
+  { '<C-k>', ':wincmd k<CR>' },
+  { '<C-j>', ':wincmd j<CR>' },
+  { '<C-h>', ':wincmd h<CR>' },
+  { '<C-l>', ':wincmd l<CR>' },
+
+  { mode = 'x', {
+    { '<', '<gv' },
+    { '>', '>gv' },
+    { 'p', 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } },
+  }},
 }
 
---  ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "Find files" },
---  ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "Find all" },
---  ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
---  ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "Find buffers" },
---  ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "Help page" },
---  ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "Find oldfiles" },
---  ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "Find in current buffer" },
-
---  -- git
---  ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "Git commits" },
---  ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "Git status" },
-
---  -- pick a hidden term
---  ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "Pick hidden term" },
-
---  -- theme switcher
---  ["<leader>th"] = { "<cmd> Telescope themes <CR>", "Nvchad themes" },
-
---  ["<leader>ma"] = { "<cmd> Telescope marks <CR>", "telescope bookmarks" },
---
