@@ -7,6 +7,7 @@
     home-manager.url = github:nix-community/home-manager/release-24.05;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.url = "github:lnl7/nix-darwin/master";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     ghostty = {
       url = "git+ssh://git@github.com/ghostty-org/ghostty";
@@ -21,9 +22,8 @@
 
   outputs = inputs@{ nixpkgs, nixpkgs_master, home-manager, darwin, ... }: 
     let
-      system = "x86_64-linux";
       overlay = 
-        final: prev: {
+        system: final: prev: {
           ghostty = inputs.ghostty.packages.${system}.default;
           vimPlugins = prev.vimPlugins // {
             nest-nvim = prev.vimUtils.buildVimPlugin {
@@ -40,9 +40,9 @@
   {
     nixosConfigurations = {
       jachym = nixpkgs.lib.nixosSystem {
-        system = system;
+        system = "x86_64-linux";
         modules = [
-         ({ config, pkgs, ... }: { nixpkgs.overlays = [ overlay ]; })
+         ({ config, pkgs, ... }: { nixpkgs.overlays = [ (overlay "x86_64-linux")]; })
 
           ./configuration.nix
           home-manager.nixosModules.home-manager
@@ -58,26 +58,28 @@
      homeConfigurations = {
        jachym =
          home-manager.lib.homeManagerConfiguration {
-           pkgs = import nixpkgs {overlays = [ overlay ]; system = "x86_64-linux";};
+           pkgs = import nixpkgs {overlays = [ (overlay "x86_64-linux")]; system = "x86_64-linux";};
            modules = [
               ./home.nix
            ];
         };
     };
 
-    darwinConfigurations."jachym" = darwin.lib.darwinSystem {
+    darwinConfigurations."Jachyms-MacBook-Pro" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
           home-manager.darwinModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.jachym = import ./home.nix;
+            home-manager.useUserPackages = false;
+            home-manager.users.jachymputta = {
+	      imports = [ ./home.nix ];
+	    };
           }
           ./nix/darwin.nix
           {
             nixpkgs.config.allowUnfree = true;
-            nixpkgs.overlays = [ overlay ];
+            nixpkgs.overlays = [ (overlay "aarch64-darwin")];
           }
         ];
       };

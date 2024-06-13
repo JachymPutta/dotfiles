@@ -13,8 +13,8 @@
   systemd.user.startServices = "sd-switch";
 
   home = {
-    username = if stdenv.isDarwin then "jachymputta" else "jachym";
-    homeDirectory = if stdenv.isDarwin then "Users/jachymputta" else "/home/jachym";
+    username = if pkgs.stdenv.isDarwin then "jachymputta" else "jachym";
+    #homeDirectory = "/Users/jachymputta";
     stateVersion = "24.05";
     sessionVariables = { 
       EDITOR = "nvim";
@@ -22,11 +22,12 @@
     };
     packages = with pkgs; [
       # Base
-      ghostty
+      
       ripgrep
       tmate
       zsh
       yazi
+      atuin
 
       # C
       # clang
@@ -34,8 +35,6 @@
       automake
       autoconf
       gnumake
-      valgrind
-      perf-tools
       cmake
 
       # Rust
@@ -55,6 +54,9 @@
 
       # Web
       nodejs
+    ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+      perf-tools
+      ghostty
     ];
   };
 
