@@ -6,6 +6,8 @@
     nixpkgs_master.url = github:NixOS/nixpkgs;
     home-manager.url = github:nix-community/home-manager/release-24.05;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    darwin.url = "github:lnl7/nix-darwin/master";
+
     ghostty = {
       url = "git+ssh://git@github.com/ghostty-org/ghostty";
     };
@@ -17,7 +19,7 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs_master, home-manager, ... }: 
+  outputs = inputs@{ nixpkgs, nixpkgs_master, home-manager, darwin, ... }: 
     let
       system = "x86_64-linux";
       overlay = 
@@ -62,5 +64,23 @@
            ];
         };
     };
+
+    darwinConfigurations."jachym" = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.jachym = import ./home.nix;
+          }
+          ./nix/darwin.nix
+          {
+            nixpkgs.config.allowUnfree = true;
+            nixpkgs.overlays = [ overlay ];
+          }
+        ];
+      };
+
   };
 }

@@ -13,8 +13,8 @@
   systemd.user.startServices = "sd-switch";
 
   home = {
-    username = "jachym";
-    homeDirectory = "/home/jachym";
+    username = if stdenv.isDarwin then "jachymputta" else "jachym";
+    homeDirectory = if stdenv.isDarwin then "Users/jachymputta" else "/home/jachym";
     stateVersion = "24.05";
     sessionVariables = { 
       EDITOR = "nvim";
