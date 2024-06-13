@@ -7,6 +7,7 @@
     ./nix/nvim.nix
     ./nix/zoxide.nix
     ./nix/zsh.nix
+    ./nix/yabai.nix
   ];
 
   programs.home-manager.enable = true;
@@ -14,6 +15,7 @@
 
   home = {
     username = if pkgs.stdenv.isDarwin then "jachymputta" else "jachym";
+    #homeDirectory = "/Users/jachymputta";
     stateVersion = "24.05";
     sessionVariables = { 
       EDITOR = "nvim";
@@ -56,10 +58,10 @@
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       perf-tools
       ghostty
+    ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
+      yabai
     ];
-  } // (if pkgs.stdenv.isLinux then {
-    homeDirectory = "/Users/jachymputta";
-  } else {});
+  };
 
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
 }
