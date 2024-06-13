@@ -9,6 +9,7 @@
       telescope-nvim
       nest-nvim
       undotree
+      nvim-autopairs
 
       # Lsp
       rustaceanvim

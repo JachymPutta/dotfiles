@@ -1,13 +1,17 @@
-# keybind = super+comma=open_config
-# macos-non-native-fullscreen = visible-menu
+keybind = super+comma=open_config
 
-# Movement
+macos-non-native-fullscreen = visible-menu
+# Movement	w
 keybind = ctrl+shift+l=goto_split:right
 keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+h=goto_split:left
 keybind = ctrl+shift+k=goto_split:top
 
 # Splits
-# keybind = super+d=new_split:right
-# keybind = super+shift+d=new_split:down
+keybind = super+d=new_split:right
+keybind = super+shift+d=new_split:down
 
+clipboard-read = allow
+
+theme = tokyonight
+background-opacity = 0.95

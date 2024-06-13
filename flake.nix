@@ -30,6 +30,7 @@
               src = inputs.nest-nvim;
             };
           };
+
           neovim = nixpkgs_master.legacyPackages.${system}.neovim;
           neovim-unwrapped = nixpkgs_master.legacyPackages.${system}.neovim-unwrapped;
         };
