@@ -15,7 +15,7 @@
 
   home = {
     username = if pkgs.stdenv.isDarwin then "jachymputta" else "jachym";
-    #homeDirectory = "/Users/jachymputta";
+    #homeDirectory = "/home/jachym";
     stateVersion = "24.05";
     sessionVariables = { 
       EDITOR = "nvim";
