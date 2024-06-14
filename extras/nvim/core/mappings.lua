@@ -38,7 +38,6 @@ require'nest'.applyKeymaps {
   { '<C-h>', ':wincmd h<CR>' },
   { '<C-l>', ':wincmd l<CR>' },
   { 'z', '<cmd>lua require("yazi").yazi()<CR>', "Open Yazi"};
-
   { mode = 'x', {
     { '<', '<gv' },
     { '>', '>gv' },

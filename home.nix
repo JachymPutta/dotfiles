@@ -7,6 +7,7 @@
     ./nix/nvim.nix
     ./nix/zoxide.nix
     ./nix/zsh.nix
+    ./nix/yazi.nix
   ];
 
   programs.home-manager.enable = true;
