@@ -2,7 +2,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require'lspconfig'
 
 --- Use defaults for 'servers'
-local servers = { "lua_ls", "html", "typst_lsp", "pyright", "rust_analyzer"} -- hls for haskell 
+local servers = { "lua_ls", "html", "typst_lsp", "pyright"}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,
