@@ -37,32 +37,33 @@
 
       # Comments
       comment-nvim
+      nvim-treesitter.withAllGrammars
 
-      #nvim-treesitter.withAllGrammars
-      (nvim-treesitter.withPlugins
-        # tree sitter with language support
-        (plugins:
-          with plugins; [
-            tree-sitter-vim
-            tree-sitter-lua
-            tree-sitter-html
-            tree-sitter-css
-            tree-sitter-javascript
-            tree-sitter-java
-            tree-sitter-typescript
-            tree-sitter-typst
-            tree-sitter-tsx
-            tree-sitter-haskell
-            tree-sitter-markdown
-            tree-sitter-markdown_inline
-            tree-sitter-bash
-            tree-sitter-nix
-            tree-sitter-rust
-            tree-sitter-json
-            tree-sitter-c
-            tree-sitter-go
-            tree-sitter-hcl
-          ]))
+      # (nvim-treesitter.withPlugins
+      #   # tree sitter with language support
+      #   (plugins:
+      #     with plugins; [
+      #       tree-sitter-vim
+      #       tree-sitter-lua
+      #       tree-sitter-html
+      #       tree-sitter-css
+      #       tree-sitter-javascript
+      #       tree-sitter-java
+      #       tree-sitter-typescript
+      #       tree-sitter-typst
+      #       tree-sitter-tsx
+      #       tree-sitter-haskell
+      #       tree-sitter-markdown
+      #       tree-sitter-markdown_inline
+      #       tree-sitter-bash
+      #       tree-sitter-nix
+      #       tree-sitter-rust
+      #       tree-sitter-json
+      #       tree-sitter-c
+      #       tree-sitter-go
+      #       tree-sitter-hcl
+      #       tree-sitter-python
+      #     ]))
     ];
     extraConfig = let
       luaRequire = module: builtins.readFile (builtins.toString

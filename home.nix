@@ -23,7 +23,6 @@
     };
     packages = with pkgs; [
       # Base
-      
       ripgrep
       tmate
       zsh
@@ -31,7 +30,6 @@
       atuin
 
       # C
-      # clang
       gcc
       automake
       autoconf
@@ -52,6 +50,10 @@
         python-pkgs.numpy
         python-pkgs.pillow
       ]))
+      pyright
+
+      # Lua
+      lua-language-server
 
       # Web
       nodejs

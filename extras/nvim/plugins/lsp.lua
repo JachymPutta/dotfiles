@@ -1,10 +1,22 @@
-require'lspconfig'.typst_lsp.setup{}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require'lspconfig'
 
-require("copilot").setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-})
-require'copilot_cmp'.setup {}
+--- Use defaults for 'servers'
+local servers = { "lua_ls", "html", "typst_lsp", "pyright", "rust_analyzer"} -- hls for haskell 
+for _, lsp in ipairs(servers) do
+  lspconfig[lsp].setup {
+    capabilities = capabilities,
+  }
+end
+
+--- LSPs with custom configurations
+lspconfig.clangd.setup {
+  on_attach = function (client, bufnr)
+    client.server_capabilities.signatureHelpProvider = false
+    on_attach(client, bufnr)
+  end,
+  capabilities = capabilities,
+}
 
 vim.g.rustaceanvim = {
   client = { server_capabilities = { inlayHintProvider = true } },
@@ -33,9 +45,9 @@ vim.g.rustaceanvim = {
   },
 }
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+require("copilot").setup({
+  suggestion = { enabled = false },
+  panel = { enabled = false },
+})
 
--- TODO: clean this up, put it into a forloop or something
-require'lspconfig'.rust_analyzer.setup {
-  capabilities = capabilities
-}
+require'copilot_cmp'.setup {}
