@@ -29,7 +29,6 @@
       tmate
       tmux
       htop
-      skhd
       wget
 
       # File management
@@ -39,13 +38,13 @@
       zathura
 
       # C
-      gcc
       automake
       autoconf
       gnumake
       cmake
       clang-tools
       boost
+      libiconv
 
       # Rust
       rust-analyzer
@@ -73,7 +72,10 @@
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       perf-tools
       ghostty
+      gcc
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
+      clang
+      skhd
     ];
   };
 
