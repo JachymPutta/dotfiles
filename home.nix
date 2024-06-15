@@ -24,10 +24,19 @@
     packages = with pkgs; [
       # Base
       ripgrep
-      tmate
       zsh
-      yazi
       atuin
+      tmate
+      tmux
+      htop
+      skhd
+      wget
+
+      # File management
+      yazi
+      fzf
+      pandoc
+      zathura
 
       # C
       gcc
@@ -35,14 +44,18 @@
       autoconf
       gnumake
       cmake
+      clang-tools
+      boost
 
       # Rust
       rust-analyzer
       rustc
       cargo
+      just
 
       # Typst
       typst-lsp
+      typst
 
       # Python
       (python3.withPackages (python-pkgs: [

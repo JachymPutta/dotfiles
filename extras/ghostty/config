@@ -1,6 +1,5 @@
 keybind = super+comma=open_config
 
-macos-non-native-fullscreen = visible-menu
 # Movement	w
 keybind = ctrl+shift+l=goto_split:right
 keybind = ctrl+shift+j=goto_split:bottom
