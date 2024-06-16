@@ -8,6 +8,7 @@
     ./nix/zoxide.nix
     ./nix/zsh.nix
     ./nix/yazi.nix
+    ./nix/direnv.nix
   ];
 
   programs.home-manager.enable = true;
@@ -46,11 +47,11 @@
       boost
       libiconv
 
-      # Rust
-      rust-analyzer
-      rustc
-      cargo
-      just
+      # Rust -- keep project specific versions
+      # rust-analyzer
+      # rustc
+      # cargo
+      # just
 
       # Typst
       typst-lsp
