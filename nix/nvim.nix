@@ -16,6 +16,7 @@
       rustaceanvim
       nvim-lspconfig
       nvim-dap
+      crates-nvim
 
       # Autocomplete
       cmp-nvim-lsp

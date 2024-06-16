@@ -2,7 +2,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 local lspconfig = require'lspconfig'
 
 --- Use defaults for 'servers'
-local servers = { "lua_ls", "html", "typst_lsp", "pyright"}
+local servers = { "lua_ls", "html", "typst_lsp", "pyright", "clangd"}
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,
@@ -10,13 +10,14 @@ for _, lsp in ipairs(servers) do
 end
 
 --- LSPs with custom configurations
-lspconfig.clangd.setup {
-  on_attach = function (client, bufnr)
-    client.server_capabilities.signatureHelpProvider = false
-    on_attach(client, bufnr)
-  end,
-  capabilities = capabilities,
-}
+-- lspconfig.clangd.setup {
+--   on_attach = function (client, bufnr)
+--     client.server_capabilities.signatureHelpProvider = false
+--     on_attach(client, bufnr)
+--   end,
+--   capabilities = capabilities,
+-- }
+
 
 vim.g.rustaceanvim = {
   client = { server_capabilities = { inlayHintProvider = true } },
@@ -44,6 +45,8 @@ vim.g.rustaceanvim = {
     },
   },
 }
+
+require'crates'.setup {}
 
 require("copilot").setup({
   suggestion = { enabled = false },
