@@ -19,6 +19,7 @@ end
 -- }
 
 
+vim.g.rustfmt_autosave = 1
 vim.g.rustaceanvim = {
   client = { server_capabilities = { inlayHintProvider = true } },
   tools = {

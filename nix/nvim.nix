@@ -14,6 +14,7 @@
 
       # Lsp
       rustaceanvim
+      rust-vim
       nvim-lspconfig
       nvim-dap
       crates-nvim
