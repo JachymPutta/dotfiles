@@ -9,16 +9,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
---- LSPs with custom configurations
--- lspconfig.clangd.setup {
---   on_attach = function (client, bufnr)
---     client.server_capabilities.signatureHelpProvider = false
---     on_attach(client, bufnr)
---   end,
---   capabilities = capabilities,
--- }
-
-
 vim.g.rustfmt_autosave = 1
 vim.g.rustaceanvim = {
   client = { server_capabilities = { inlayHintProvider = true } },
