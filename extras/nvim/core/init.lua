@@ -1,10 +1,10 @@
 -- Set basic options
-vim.opt.number = true            -- Show line numbers
-vim.opt.hlsearch = false         -- Disable search highlighting
-vim.opt.expandtab = true         -- Use spaces instead of tabs
-vim.opt.tabstop = 2              -- Number of spaces tabs count for
-vim.opt.shiftwidth = 2           -- Number of spaces for each indentation
-vim.opt.termguicolors = true     -- Enable true color support
+vim.opt.number = true        -- Show line numbers
+vim.opt.hlsearch = false     -- Disable search highlighting
+vim.opt.expandtab = true     -- Use spaces instead of tabs
+vim.opt.tabstop = 2          -- Number of spaces tabs count for
+vim.opt.shiftwidth = 2       -- Number of spaces for each indentation
+vim.opt.termguicolors = true -- Enable true color support
 
 -- Change colorscheme
 vim.cmd([[colorscheme catppuccin]])
@@ -16,12 +16,12 @@ vim.opt.statusline = "%f %h%m%r%=%-14.(%l,%c%V%) %P"
 local clipboard_set = false
 -- Autocmd to set clipboard to use the system clipboard on first file open
 vim.api.nvim_create_autocmd("BufRead", {
-    callback = function()
-        if not clipboard_set then
-            vim.opt.clipboard:append("unnamedplus")
-            clipboard_set = true
-        end
+  callback = function()
+    if not clipboard_set then
+      vim.opt.clipboard:append("unnamedplus")
+      clipboard_set = true
     end
+  end
 })
 
 -- Rust lsp directory
@@ -31,3 +31,9 @@ vim.api.nvim_create_autocmd("BufRead", {
 vim.fn.setenv("CARGO_TARGET_DIR", "target_dirs/ra")
 
 
+-- Autocmd to format on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+  callback = function()
+    vim.lsp.buf.format { async = false }
+  end
+})
