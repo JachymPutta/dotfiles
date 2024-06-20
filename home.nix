@@ -63,7 +63,7 @@
         python-pkgs.numpy
         python-pkgs.pillow
       ]))
-      pyright
+      ruff-lsp
 
       # Lua
       lua-language-server
