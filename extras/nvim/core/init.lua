@@ -5,6 +5,8 @@ vim.opt.expandtab = true     -- Use spaces instead of tabs
 vim.opt.tabstop = 2          -- Number of spaces tabs count for
 vim.opt.shiftwidth = 2       -- Number of spaces for each indentation
 vim.opt.termguicolors = true -- Enable true color support
+vim.opt.ignorecase = true    -- Ignore case when searching
+vim.opt.smartcase = true     -- Ignore case if search pattern is all lowercase
 
 -- Change colorscheme
 vim.cmd([[colorscheme catppuccin]])
