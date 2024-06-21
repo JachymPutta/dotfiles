@@ -54,14 +54,14 @@
       # just
 
       # Typst
-      typst-lsp
-      typst
+      # typst-lsp
+      # typst
 
       # Python
       (python3.withPackages (python-pkgs: [
         python-pkgs.pandas
         python-pkgs.numpy
-        python-pkgs.pillow
+        # python-pkgs.pillow
       ]))
       ruff-lsp
 
