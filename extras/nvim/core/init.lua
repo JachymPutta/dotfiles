@@ -7,12 +7,13 @@ vim.opt.shiftwidth = 2       -- Number of spaces for each indentation
 vim.opt.termguicolors = true -- Enable true color support
 vim.opt.ignorecase = true    -- Ignore case when searching
 vim.opt.smartcase = true     -- Ignore case if search pattern is all lowercase
+vim.opt.undofile = true      -- Enable persistent undo
+vim.opt.statusline = "%f %h%m%r%=%-14.(%l,%c%V%) %P"
 
 -- Change colorscheme
 vim.cmd([[colorscheme catppuccin]])
 
 -- Simple status line
-vim.opt.statusline = "%f %h%m%r%=%-14.(%l,%c%V%) %P"
 
 -- Flag to check if clipboard has been set
 local clipboard_set = false
@@ -39,3 +40,10 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format { async = false }
   end
 })
+
+-- Enable persistent undo
+vim.opt.undodir = vim.fn.expand('~/.config/nvim/undodir')
+local undodir = vim.fn.expand('~/.config/nvim/undodir')
+if not vim.fn.isdirectory(undodir) then
+  vim.fn.mkdir(undodir, 'p')
+end
