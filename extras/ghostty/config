@@ -14,3 +14,5 @@ clipboard-read = allow
 
 theme = tokyonight
 background-opacity = 0.95
+
+macos-non-native-fullscreen = true
