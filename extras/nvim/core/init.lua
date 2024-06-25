@@ -1,14 +1,16 @@
 -- Set basic options
-vim.opt.number = true        -- Show line numbers
-vim.opt.hlsearch = false     -- Disable search highlighting
-vim.opt.expandtab = true     -- Use spaces instead of tabs
-vim.opt.tabstop = 2          -- Number of spaces tabs count for
-vim.opt.shiftwidth = 2       -- Number of spaces for each indentation
-vim.opt.termguicolors = true -- Enable true color support
-vim.opt.ignorecase = true    -- Ignore case when searching
-vim.opt.smartcase = true     -- Ignore case if search pattern is all lowercase
-vim.opt.undofile = true      -- Enable persistent undo
-vim.opt.statusline = "%f %h%m%r%=%-14.(%l,%c%V%) %P"
+vim.opt.number = true                                -- Show line numbers
+vim.opt.hlsearch = false                             -- Disable search highlighting
+vim.opt.expandtab = true                             -- Use spaces instead of tabs
+vim.opt.tabstop = 2                                  -- Number of spaces tabs count for
+vim.opt.shiftwidth = 2                               -- Number of spaces for each indentation
+vim.opt.termguicolors = true                         -- Enable true color support
+vim.opt.ignorecase = true                            -- Ignore case when searching
+vim.opt.smartcase = true                             -- Ignore case if search pattern is all lowercase
+vim.opt.undofile = true                              -- Enable persistent undo
+vim.opt.statusline = "%f %h%m%r%=%-14.(%l,%c%V%) %P" -- Set statusline
+vim.opt_local.spell = true                           -- Enable spell checking
+vim.opt_local.spelllang = 'en_us'                    -- Set spell checking language
 
 -- Change colorscheme
 vim.cmd([[colorscheme catppuccin]])

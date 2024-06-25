@@ -76,6 +76,7 @@
       gcc
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
       clang
+      yabai
       skhd
     ];
   };

@@ -11,6 +11,12 @@
   users.users.jachymputta.home = "/Users/jachymputta";
   users.users.jachymputta.shell = pkgs.zsh;
   
+  services.yabai = {
+    enable = true;
+    package = pkgs.yabai;
+    extraConfig = builtins.readFile ../extras/yabai/yabairc;
+  };
+
   services.skhd = {
     enable = true;
     skhdConfig = builtins.readFile ../extras/skhd/skhdrc;
