@@ -12,7 +12,8 @@ require 'nest'.applyKeymaps {
       { 'm', '<cmd> lua vim.lsp.buf.format { async = true } <CR>', "Format" },
     },
     },
-    { 'u',  '<cmd> UndotreeToggle <CR>' },
+    { 'u', '<cmd> UndotreeToggle <CR>' },
+    { 'z', '<cmd> ZenMode <CR>' },
     { 'c', {
       { 'a', '<cmd> lua vim.lsp.buf.code_action() <CR>',   "Code action" },
       { 'r', '<cmd> lua vim.diagnostic.open_float() <CR>', "Show full error" },

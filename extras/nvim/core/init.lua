@@ -24,8 +24,6 @@ vim.opt.colorcolumn = "80"
 -- Change colorscheme
 vim.cmd([[colorscheme catppuccin]])
 
--- Simple status line
-
 -- Flag to check if clipboard has been set
 local clipboard_set = false
 -- Autocmd to set clipboard to use the system clipboard on first file open

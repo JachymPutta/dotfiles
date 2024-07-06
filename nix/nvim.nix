@@ -10,7 +10,11 @@
       yazi-nvim
       nest-nvim
       undotree
+
+      # Convenience
       nvim-autopairs
+      which-key-nvim
+      zen-mode-nvim
 
       # Lsp
       rustaceanvim

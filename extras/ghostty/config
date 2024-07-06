@@ -15,5 +15,5 @@ clipboard-read = allow
 theme = tokyonight
 background-opacity = 0.95
 
-window-decoration = false
-shell-integration-features = cursor,no-sudo
+# window-decoration = false
+# shell-integration-features = cursor,no-sudo

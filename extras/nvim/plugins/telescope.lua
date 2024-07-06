@@ -1,3 +1,4 @@
+require("which-key").setup()
 require("telescope").setup {
   defaults = {
     vimgrep_arguments = {
