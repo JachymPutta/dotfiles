@@ -1,8 +1,8 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require'lspconfig'
+local lspconfig = require 'lspconfig'
 
 --- Use defaults for 'servers'
-local servers = { "lua_ls", "html", "typst_lsp", "ruff_lsp", "clangd"}
+local servers = { "lua_ls", "html", "typst_lsp", "ruff_lsp", "pyright", "clangd" }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     capabilities = capabilities,
@@ -37,11 +37,11 @@ vim.g.rustaceanvim = {
   },
 }
 
-require'crates'.setup {}
+require 'crates'.setup {}
 
 require("copilot").setup({
   suggestion = { enabled = false },
   panel = { enabled = false },
 })
 
-require'copilot_cmp'.setup {}
+require 'copilot_cmp'.setup {}

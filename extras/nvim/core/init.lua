@@ -12,6 +12,15 @@ vim.opt.statusline = "%f %h%m%r%=%-14.(%l,%c%V%) %P" -- Set statusline
 vim.opt_local.spell = true                           -- Enable spell checking
 vim.opt_local.spelllang = 'en_us'                    -- Set spell checking language
 
+--
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+
+vim.opt.updatetime = 50
+
+vim.opt.colorcolumn = "80"
+
 -- Change colorscheme
 vim.cmd([[colorscheme catppuccin]])
 
