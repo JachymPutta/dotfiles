@@ -2,15 +2,9 @@ bindkey -r '^l'
 
 autopair-init
 
-DISABLE_AUTO_TITLE="true"
-
 AGKOZAK_CMD_EXEC_TIME=5
 AGKOZAK_COLORS_CMD_EXEC_TIME='yellow'
 AGKOZAK_COLORS_PROMPT_CHAR='magenta'
 AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
 AGKOZAK_MULTILINE=0
 AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
-
-function stitle() {
-  echo -en "\e]2;$@\a"
-}

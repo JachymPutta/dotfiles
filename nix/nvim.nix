@@ -39,7 +39,6 @@
       copilot-lua
       copilot-cmp
       copilot-vim
-      # codeium-nvim //NOTE: unfree license, deal with it later
 
       # Comments
       comment-nvim
@@ -53,21 +52,13 @@
       #       tree-sitter-lua
       #       tree-sitter-html
       #       tree-sitter-css
-      #       tree-sitter-javascript
-      #       tree-sitter-java
-      #       tree-sitter-typescript
       #       tree-sitter-typst
-      #       tree-sitter-tsx
-      #       tree-sitter-haskell
       #       tree-sitter-markdown
-      #       tree-sitter-markdown_inline
       #       tree-sitter-bash
       #       tree-sitter-nix
       #       tree-sitter-rust
       #       tree-sitter-json
       #       tree-sitter-c
-      #       tree-sitter-go
-      #       tree-sitter-hcl
       #       tree-sitter-python
       #     ]))
     ];
