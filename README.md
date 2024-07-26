@@ -14,8 +14,17 @@ This is a repository to set up my personal development environment it includes n
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
-2. Run the setup script
+2. Install Home manager
+Instructions [here](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)
+
+
+3. Run the setup script
     - On Linux: uncomment the `#homeDirectory = "/home/username";`
+    - (First time)
+    ```sh
+    home-manager switch --flake .#jachym -L
+    ```
+    - (After the first time)
     ```sh
     update
     ```
