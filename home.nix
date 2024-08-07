@@ -47,6 +47,7 @@
       clang-tools
       boost
       libiconv
+      ccache
 
       # Rust -- keep project specific versions
       # rust-analyzer
