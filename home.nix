@@ -9,6 +9,7 @@
     ./nix/zsh.nix
     ./nix/yazi.nix
     ./nix/direnv.nix
+    ./nix/tmux.nix
   ];
 
   programs.home-manager.enable = true;
