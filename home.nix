@@ -75,9 +75,9 @@
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       perf-tools
       ghostty
-      gcc
+#      gcc
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
-      clang
+#      clang
       yabai
       skhd
     ];
