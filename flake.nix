@@ -87,6 +87,7 @@
           }
           ./nix/darwin.nix
           {
+            system.stateVersion = 5;
             nixpkgs.config.allowUnfree = true;
             nixpkgs.overlays = [ (overlay "aarch64-darwin")];
           }

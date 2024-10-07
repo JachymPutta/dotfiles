@@ -8,3 +8,13 @@ AGKOZAK_COLORS_PROMPT_CHAR='magenta'
 AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
 AGKOZAK_MULTILINE=0
 AGKOZAK_PROMPT_CHAR=( ❯ ❯ ❮ )
+
+flakify() {
+  if [ ! -e flake.nix ]; then
+    nix flake new -t github:nix-community/nix-direnv .
+  elif [ ! -e .envrc ]; then
+    echo "use flake" > .envrc
+    direnv allow
+  fi
+  ${EDITOR:-vim} flake.nix
+}

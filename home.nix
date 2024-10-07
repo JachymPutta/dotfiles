@@ -70,7 +70,7 @@
       # Lua
       lua-language-server
 
-      # Web
+      # Node is needed for copilot etc
       nodejs
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       perf-tools
