@@ -9,9 +9,7 @@
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    ghostty = {
-      url = "git+ssh://git@github.com/ghostty-org/ghostty";
-    };
+    ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
 
     # Vim plugins
     nest-nvim = {
@@ -49,11 +47,11 @@
   {
     nixosConfigurations = {
       jachym = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = "aarch64-linux";
         modules = [
-         ({ config, pkgs, ... }: { nixpkgs.overlays = [ (overlay "x86_64-linux")]; })
+         ({ config, pkgs, ... }: { nixpkgs.overlays = [ (overlay "aarch64-linux")]; })
 
-          ./configuration.nix
+          ./orb/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

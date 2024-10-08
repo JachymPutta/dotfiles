@@ -18,3 +18,5 @@ flakify() {
   fi
   ${EDITOR:-vim} flake.nix
 }
+
+export LC_CTYPE=en_US.UTF-8

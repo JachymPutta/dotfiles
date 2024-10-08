@@ -32,6 +32,7 @@
       tmux
       htop
       wget
+      ghostty
 
       # File management
       yazi
@@ -74,7 +75,6 @@
       nodejs
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       perf-tools
-      ghostty
 #      gcc
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
 #      clang
