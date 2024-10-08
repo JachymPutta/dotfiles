@@ -81,7 +81,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = false;
-            home-manager.users.jachymputta = {
+            home-manager.users.jachym = {
 	      imports = [ ./home.nix ];
 	    };
           }

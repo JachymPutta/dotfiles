@@ -8,8 +8,8 @@
     };
   };
 
-  users.users.jachymputta.home = "/Users/jachymputta";
-  users.users.jachymputta.shell = pkgs.zsh;
+  users.users.jachym.home = "/Users/jachym";
+  users.users.jachym.shell = pkgs.zsh;
   
   services.yabai = {
     enable = true;

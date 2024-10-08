@@ -16,7 +16,7 @@
   systemd.user.startServices = "sd-switch";
 
   home = {
-    username = if pkgs.stdenv.isDarwin then "jachymputta" else "jachym";
+    username = "jachym";
     #homeDirectory = "/home/jachym";
     stateVersion = "24.05";
     sessionVariables = { 
