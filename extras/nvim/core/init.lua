@@ -36,6 +36,19 @@ vim.api.nvim_create_autocmd("BufRead", {
   end
 })
 
+-- Copy over ssh
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
+    ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
+  },
+}
+
 -- Rust lsp directory
 -- With big projects it's better to keep the compilation and lsp
 -- directories separate, run this in the root fo the project
