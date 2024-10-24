@@ -17,6 +17,11 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 2. Install Home manager
 Instructions [here](https://nix-community.github.io/home-manager/index.xhtml#sec-install-standalone)
 
+Base installation (master branch):
+```sh
+nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
+nix-channel --update
+```
 
 3. Run the setup script
     - On Linux: uncomment the `#homeDirectory = "/home/username";`
@@ -32,7 +37,13 @@ Instructions [here](https://nix-community.github.io/home-manager/index.xhtml#sec
     ```sh
     ./darwin.sh
     ```
+## Common issues
+- `unknown-terminal ghostty-xterm` - terminfo needs to be updated follow [here](https://github.com/ghostty-org/ghostty?tab=readme-ov-file#terminfo)
 
+  For ssh, run this on the host:
+  ```sh
+  infocmp -x | ssh YOUR-SERVER -- tic -x -
+  ```
 ## Project Structure
 ```plaintext
 .
