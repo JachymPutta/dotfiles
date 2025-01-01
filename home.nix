@@ -25,14 +25,23 @@
     };
     packages = with pkgs; [
       # Base
-      ripgrep
-      zsh
-      atuin
       tmate
       tmux
       htop
       wget
       # ghostty
+
+      # Shell
+      ripgrep
+      zsh
+      atuin
+      zoxide
+      eza
+      bat
+      entr
+      btop
+      tldr
+      dust
 
       # File management
       yazi

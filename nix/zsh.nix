@@ -8,7 +8,12 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -l";
+      ls = "eza";
+      ll = "eza -l";
+      tree = "eza -T";
+      cat = "bat";
+      grep = "rg";
+      htop = "btop";
       switch = "sudo nixos-rebuild switch --flake .#jachym -L";
       update = "cd ~/dotfiles && home-manager switch --flake .#jachym -L && cd -";
     };
@@ -28,6 +33,9 @@
       ];
     };
 
-    initExtra = builtins.readFile ../extras/zsh/zshrc;
+    initExtra = ''
+      ${builtins.readFile ../extras/zsh/zshrc}
+      ${builtins.readFile ../extras/zsh/zsh_git}
+    '';
   };
 }
