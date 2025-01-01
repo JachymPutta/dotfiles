@@ -9,7 +9,7 @@
     darwin.url = "github:lnl7/nix-darwin/master";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
+    # ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
 
     # Vim plugins
     nest-nvim = {
@@ -26,7 +26,7 @@
     let
       overlay = 
         system: final: prev: {
-          ghostty = inputs.ghostty.packages.${system}.default;
+          # ghostty = inputs.ghostty.packages.${system}.default;
           vimPlugins = prev.vimPlugins // {
             nest-nvim = prev.vimUtils.buildVimPlugin {
               name = "nest.nvim";
