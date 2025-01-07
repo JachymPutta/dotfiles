@@ -19,6 +19,7 @@
 
   services.skhd = {
     enable = true;
+    package = pkgs.skhd;
     skhdConfig = builtins.readFile ../extras/skhd/skhdrc;
   };
 
@@ -31,10 +32,8 @@
 
     casks = [
       "brave-browser"
-      "spotify"
       "steam"
       "discord"
-      "emacs"
       "signal"
       "visual-studio-code"
       "slack"

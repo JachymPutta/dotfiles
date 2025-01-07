@@ -12,10 +12,12 @@
       ll = "eza -l";
       tree = "eza -T";
       cat = "bat";
+      cd = "z";
       grep = "rg";
       htop = "btop";
       switch = "sudo nixos-rebuild switch --flake .#jachym -L";
       update = "cd ~/dotfiles && home-manager switch --flake .#jachym -L && cd -";
+      darwin = "cd ~/dotfiles && darwin-rebuild switch --flake flake.nix && cd -";
     };
 
     history = {
@@ -30,6 +32,7 @@
         { name = "agkozak/agkozak-zsh-prompt"; }
         { name = "zsh-users/zsh-syntax-highlighting"; }
         { name = "hlissner/zsh-autopair"; }
+        { name = "jeffreytse/zsh-vi-mode"; }
       ];
     };
 

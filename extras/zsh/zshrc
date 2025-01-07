@@ -20,3 +20,11 @@ flakify() {
 }
 
 export LC_CTYPE=en_US.UTF-8
+
+alias -g ...='../..'
+alias -g ....='../../..'
+alias -g .....='../../../..'
+alias -g ......='../../../../..'
+
+alias -- -='cd -'
+
