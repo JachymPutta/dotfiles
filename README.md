@@ -6,7 +6,6 @@ This is a repository to set up my personal development environment it includes n
 - [Zsh](https://www.zsh.org/) as the shell
 - [Oh My Zsh](https://ohmyz.sh/) as the Zsh configuration manager
 - [Atuin](https:https://atuin.sh/) to synchronize shell history across multiple machines
-- *Ghostty* as the terminal emulator (in closed beta right now 🤫 will have to be commmented out without access)
 
 
 ## Install
