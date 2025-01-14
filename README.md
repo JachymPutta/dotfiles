@@ -34,8 +34,13 @@ nix-shell '<home-manager>' -A install
     update
     ```
     - On MacOS
+    - (First time)
     ```sh
-    ./darwin.sh
+    nix run nix-darwin -- switch --flake ~/dotfiles
+    ```
+    - (After the first time)
+    ```sh
+    darwin
     ```
 ## Common issues
 - `unknown-terminal ghostty-xterm` - terminfo needs to be updated follow [here](https://github.com/ghostty-org/ghostty?tab=readme-ov-file#terminfo)

@@ -19,7 +19,7 @@
 
   home = {
     username = "jachym";
-    homeDirectory = "/home/jachym";
+    # homeDirectory = "/home/jachym";
     stateVersion = "24.11";
     sessionVariables = { 
       EDITOR = "nvim";
@@ -86,7 +86,7 @@
       nodejs
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       perf-tools
-      # ghostty
+      ghostty
       # gcc
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
       # clang

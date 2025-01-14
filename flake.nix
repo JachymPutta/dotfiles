@@ -31,11 +31,6 @@
               pname = "nest-nvim";
               src = inputs.nest-nvim;
             };
-            # yazi-nvim = prev.vimUtils.buildVimPlugin {
-            #   name = "yazi.nvim";
-            #   pname = "yazi-nvim";
-            #   src = inputs.yazi-nvim;
-            # };
           };
 
           neovim = nixpkgs.legacyPackages.${system}.neovim;

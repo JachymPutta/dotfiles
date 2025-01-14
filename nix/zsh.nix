@@ -16,8 +16,8 @@
       grep = "rg";
       htop = "btop";
       switch = "sudo nixos-rebuild switch --flake .#jachym -L";
-      update = "cd ~/dotfiles && home-manager switch --flake .#jachym -L && cd -";
-      darwin = "cd ~/dotfiles && darwin-rebuild switch --flake flake.nix && cd -";
+      update = "home-manager switch --flake ~/dotfiles/#jachym -L ";
+      darwin = "darwin-rebuild switch --flake ~/dotfiles ";
     };
 
     history = {
