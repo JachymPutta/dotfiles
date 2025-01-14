@@ -15,10 +15,12 @@
   programs.home-manager.enable = true;
   systemd.user.startServices = "sd-switch";
 
+  nixpkgs.config.allowUnfree = true;
+
   home = {
     username = "jachym";
-    #homeDirectory = "/home/jachym";
-    stateVersion = "24.05";
+    homeDirectory = "/home/jachym";
+    stateVersion = "24.11";
     sessionVariables = { 
       EDITOR = "nvim";
       SHELL = "${pkgs.zsh}/bin/zsh";
@@ -29,7 +31,6 @@
       tmux
       htop
       wget
-      # ghostty
 
       # Shell
       ripgrep
@@ -85,9 +86,10 @@
       nodejs
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       perf-tools
-#      gcc
+      # ghostty
+      # gcc
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
-#      clang
+      # clang
       yabai
       skhd
     ];

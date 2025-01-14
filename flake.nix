@@ -2,46 +2,44 @@
   description = "Close to a perfect configuration";
 
   inputs = {
-    nixpkgs.url = github:NixOS/nixpkgs/24.05;
-    nixpkgs_master.url = github:NixOS/nixpkgs;
-    home-manager.url = github:nix-community/home-manager/release-24.05;
+    nixpkgs.url = github:NixOS/nixpkgs;
+    home-manager.url = github:nix-community/home-manager;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    darwin.url = "github:lnl7/nix-darwin/master";
+    darwin.url = "github:lnl7/nix-darwin";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
-    # ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
+    # Stable
+    # nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-24.11-darwin;
+    # home-manager.url = github:nix-community/home-manager/release-24.11;
 
-    # Vim plugins
+    ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
+
     nest-nvim = {
       url = "github:lionc/nest.nvim";
       flake = false;
     };
-    yazi-nvim = {
-      url = "github:mikavilpas/yazi.nvim";
-      flake = false;
-    };
   };
 
-  outputs = inputs@{ nixpkgs, nixpkgs_master, home-manager, darwin, ... }: 
+  outputs = inputs@{ nixpkgs, home-manager, darwin, ... }: 
     let
       overlay = 
         system: final: prev: {
-          # ghostty = inputs.ghostty.packages.${system}.default;
+          ghostty = inputs.ghostty.packages.${system}.default;
           vimPlugins = prev.vimPlugins // {
             nest-nvim = prev.vimUtils.buildVimPlugin {
               name = "nest.nvim";
               pname = "nest-nvim";
               src = inputs.nest-nvim;
             };
-            yazi-nvim = prev.vimUtils.buildVimPlugin {
-              name = "yazi.nvim";
-              pname = "yazi-nvim";
-              src = inputs.yazi-nvim;
-            };
+            # yazi-nvim = prev.vimUtils.buildVimPlugin {
+            #   name = "yazi.nvim";
+            #   pname = "yazi-nvim";
+            #   src = inputs.yazi-nvim;
+            # };
           };
 
-          neovim = nixpkgs_master.legacyPackages.${system}.neovim;
-          neovim-unwrapped = nixpkgs_master.legacyPackages.${system}.neovim-unwrapped;
+          neovim = nixpkgs.legacyPackages.${system}.neovim;
+          neovim-unwrapped = nixpkgs.legacyPackages.${system}.neovim-unwrapped;
         };
     in
   {
