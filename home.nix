@@ -76,7 +76,7 @@
         python-pkgs.pandas
         python-pkgs.numpy
       ]))
-      ruff-lsp
+      ruff
       pyright
 
       # Lua

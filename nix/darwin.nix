@@ -38,6 +38,7 @@
       "visual-studio-code"
       "slack"
       "zoom"
+      "wacom-tablet"
     ];
   };
 }
