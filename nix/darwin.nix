@@ -30,6 +30,10 @@
       upgrade = true;
     };
 
+    taps = [
+      "railwaycat/emacsmacport"
+    ];
+
     casks = [
       "brave-browser"
       "steam"
@@ -39,6 +43,7 @@
       "slack"
       "zoom"
       "wacom-tablet"
+      "emacs-mac"
     ];
   };
 }
