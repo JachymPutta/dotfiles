@@ -31,6 +31,7 @@
   environment.systemPackages = with pkgs; [
     neovim
     git
+    perl
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
