@@ -1,5 +1,8 @@
 -- Set basic options
-vim.opt.number = true                                -- Show line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.signcolumn = "number"
+
 vim.opt.hlsearch = false                             -- Disable search highlighting
 vim.opt.expandtab = true                             -- Use spaces instead of tabs
 vim.opt.tabstop = 2                                  -- Number of spaces tabs count for

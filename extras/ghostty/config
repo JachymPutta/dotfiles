@@ -17,3 +17,4 @@ background-opacity = 0.95
 
 # window-decoration = false
 # shell-integration-features = cursor,no-sudo
+title = Ghostty
