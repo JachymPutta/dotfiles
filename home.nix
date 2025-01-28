@@ -13,9 +13,10 @@
   ];
 
   programs.home-manager.enable = true;
-  systemd.user.startServices = "sd-switch";
 
   nixpkgs.config.allowUnfree = true;
+
+  systemd.user.startServices = "sd-switch";
 
   home = {
     username = "jachym";
@@ -80,17 +81,16 @@
       # Node is needed for copilot etc
       nodejs
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+      # Linux specific packages
       perf-tools
       ghostty
-      # gcc
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
-      # clang
-      yabai
-      skhd
+      # Mac specific packages
     ];
   };
 
   # Extra configs
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
-  xdg.configFile.".spacemacs".source = ./extras/emacs/spacemacs;
+
+  home.file.".spacemacs".source = ./extras/emacs/spacemacs;
 }
