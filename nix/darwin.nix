@@ -81,7 +81,7 @@
     ];
 
     casks = [
-      "arc"
+      "zen-browser"
       "steam"
       "discord"
       "signal"
