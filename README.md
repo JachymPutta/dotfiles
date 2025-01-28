@@ -4,7 +4,6 @@ This is a repository to set up my personal development environment it includes n
 - [NeoVim](https://www.neovim.io/) as the text editor
 - [Yazi](https://www.yazi-rs.github.io/) terminal file manager
 - [Zsh](https://www.zsh.org/) as the shell
-- [Oh My Zsh](https://ohmyz.sh/) as the Zsh configuration manager
 - [Atuin](https:https://atuin.sh/) to synchronize shell history across multiple machines
 
 

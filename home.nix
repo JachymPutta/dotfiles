@@ -29,7 +29,6 @@
       # Base
       tmate
       tmux
-      htop
       wget
 
       # Shell
