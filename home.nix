@@ -92,5 +92,5 @@
 
   # Extra configs
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
-  xdg.configFile.".spacemacs".source = ./extras/emacs/.spacemacs;
+  xdg.configFile.".spacemacs".source = ./extras/emacs/spacemacs;
 }
