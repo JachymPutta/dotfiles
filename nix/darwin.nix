@@ -8,19 +8,45 @@
     };
   };
 
-  users.users.jachym.home = "/Users/jachym";
-  users.users.jachym.shell = pkgs.zsh;
+  users.users = {
+    jachym = {
+      home = "/Users/jachym";
+      shell = pkgs.zsh;
+    };
+  };
   
-  services.yabai = {
-    enable = true;
-    package = pkgs.yabai;
-    extraConfig = builtins.readFile ../extras/yabai/yabairc;
+  system = { 
+    defaults = {
+      dock.autohide = true;
+      finder = {
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
+        ShowPathbar = true;
+      };
+      screencapture.target = "clipboard";
+    };
+    keyboard = { 
+      enableKeyMapping = true;
+      remapCapsLockToControl = true;
+    };
   };
 
-  services.skhd = {
-    enable = true;
-    package = pkgs.skhd;
-    skhdConfig = builtins.readFile ../extras/skhd/skhdrc;
+  services = {
+    yabai = {
+      enable = true;
+      package = pkgs.yabai;
+      extraConfig = builtins.readFile ../extras/yabai/yabairc;
+    };
+    skhd = {
+      enable = true;
+      package = pkgs.skhd;
+      skhdConfig = builtins.readFile ../extras/skhd/skhdrc;
+    };
+    # Tailscale installs the CLI version, the GUI is installed via App Store
+    # tailscale = {
+    #   enable = true;
+    #   package = pkgs.tailscale;
+    # };
   };
 
   homebrew = {

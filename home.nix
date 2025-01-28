@@ -66,10 +66,6 @@
       # cargo
       # just
 
-      # Typst
-      # typst-lsp
-      # typst
-
       # Python
       (python3.withPackages (python-pkgs: [
         python-pkgs.pandas
@@ -94,5 +90,7 @@
     ];
   };
 
+  # Extra configs
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
+  xdg.configFile.".spacemacs".source = ./extras/emacs/.spacemacs;
 }
