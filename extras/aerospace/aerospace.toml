@@ -1,0 +1,67 @@
+default-root-container-layout = "tiles"
+automatically-unhide-macos-hidden-apps = false
+on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+[gaps]
+  outer.left = 8
+  outer.bottom = 8
+  outer.top = 8
+  outer.right = 8
+
+
+[mode.main.binding]
+  ctrl-shift-1 = "workspace B"
+  ctrl-shift-2 = "workspace T"
+  ctrl-shift-3 = "workspace E"
+  ctrl-shift-4 = "workspace C"
+
+  ctrl-cmd-1 = "move-node-to-workspace B"
+  ctrl-cmd-2 = "move-node-to-workspace T"
+  ctrl-cmd-3 = "move-node-to-workspace E"
+  ctrl-cmd-4 = "move-node-to-workspace C"
+
+  alt-h = "focus left"
+  alt-j = "focus down"
+  alt-k = "focus up"
+  alt-l = "focus right"
+
+  alt-tab = "workspace-back-and-forth"
+
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = [
+  # FIX: this is a workaround for https://github.com/nikitabobko/AeroSpace/issues/68
+  # this was also observed in:
+  # - https://github.com/ghostty-org/ghostty/issues/1840
+  # - https://github.com/ghostty-org/ghostty/issues/2006
+  "layout floating",
+  "move-node-to-workspace T",
+]
+
+[[on-window-detected]]
+if.app-id = "company.thebrowser.Browser"
+run = [
+  "move-node-to-workspace B",
+]
+
+[[on-window-detected]]
+if.app-id = "org.gnu.Emacs"
+run = [
+  "move-node-to-workspace E",
+]
+
+[[on-window-detected]]
+if.app-id = "com.tinyspeck.slackmacgap"
+run = [
+  "move-node-to-workspace C",
+]
+
+[[on-window-detected]]
+if.app-id = "org.whispersystems.signal-desktop"
+run = [
+  "move-node-to-workspace C",
+]
+

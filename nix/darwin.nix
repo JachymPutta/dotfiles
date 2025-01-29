@@ -35,37 +35,7 @@
     aerospace = {
       enable = true;
       package = pkgs.aerospace;
-      settings = {
-        gaps = {
-          outer.left = 8;
-          outer.bottom = 8;
-          outer.top = 8;
-          outer.right = 8;
-        };
-        default-root-container-layout = "tiles";
-        automatically-unhide-macos-hidden-apps = false;
-        on-focused-monitor-changed = ["move-mouse monitor-lazy-center"];
-        enable-normalization-flatten-containers = true;
-        enable-normalization-opposite-orientation-for-nested-containers = true;
-        mode.main.binding = {
-          ctrl-shift-1 = "workspace 1";
-          ctrl-shift-2 = "workspace 2";
-          ctrl-shift-3 = "workspace 3";
-          ctrl-shift-4 = "workspace 4";
-
-          ctrl-cmd-1 = "move-node-to-workspace 1";
-          ctrl-cmd-2 = "move-node-to-workspace 2";
-          ctrl-cmd-3 = "move-node-to-workspace 3";
-          ctrl-cmd-4 = "move-node-to-workspace 4";
-
-          alt-h = "focus left";
-          alt-j = "focus down";
-          alt-k = "focus up";
-          alt-l = "focus right";
-
-          alt-tab = "workspace-back-and-forth";
-        };
-      };
+      settings = pkgs.lib.importTOML ../extras/aerospace/aerospace.toml;
     };
     # Tailscale installs the CLI version, the GUI is installed via App Store
     # tailscale = {
@@ -82,7 +52,7 @@
     };
 
     casks = [
-      "zen-browser"
+      "arc"
       "steam"
       "discord"
       "signal"
