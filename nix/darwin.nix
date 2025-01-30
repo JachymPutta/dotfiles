@@ -51,6 +51,10 @@
       upgrade = true;
     };
 
+    taps = [
+      "railwaycat/emacsmacport"
+    ];
+
     casks = [
       "arc"
       "steam"
@@ -60,6 +64,7 @@
       "slack"
       "zoom"
       "wacom-tablet"
+      "emacs-mac"
     ];
   };
 }
