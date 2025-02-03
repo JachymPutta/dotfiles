@@ -17,11 +17,13 @@ enable-normalization-opposite-orientation-for-nested-containers = true
   ctrl-shift-2 = "workspace T"
   ctrl-shift-3 = "workspace E"
   ctrl-shift-4 = "workspace C"
+  ctrl-shift-q = "workspace Q"
 
   ctrl-cmd-1 = "move-node-to-workspace B"
   ctrl-cmd-2 = "move-node-to-workspace T"
   ctrl-cmd-3 = "move-node-to-workspace E"
   ctrl-cmd-4 = "move-node-to-workspace C"
+  ctrl-cmd-q = "move-node-to-workspace Q"
 
   alt-h = "focus left"
   alt-j = "focus down"
@@ -29,6 +31,13 @@ enable-normalization-opposite-orientation-for-nested-containers = true
   alt-l = "focus right"
 
   alt-tab = "workspace-back-and-forth"
+
+[workspace-to-monitor-force-assignment]
+B = "main"
+T = "main"
+E = "main"
+C = "main"
+Q = ["secondary", "main"]
 
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
