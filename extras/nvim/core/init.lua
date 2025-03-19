@@ -1,4 +1,5 @@
 -- Set basic options
+vim.loader.enable(true)
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
