@@ -1,7 +1,7 @@
 { pkgs, home-manager, ... }:
 { 
-  services.nix-daemon.enable = true;
   nix = {
+    enable = false; # NOTE: nix is managed with the det-sys installation
     package = pkgs.nix;
     settings = {
       "extra-experimental-features" = [ "nix-command" "flakes" ];
@@ -45,7 +45,7 @@
   };
 
   homebrew = {
-    enable = false;
+    enable = true;
     onActivation = {
       autoUpdate = true;
       upgrade = true;
@@ -64,6 +64,7 @@
       "slack"
       "zoom"
       "wacom-tablet"
+      "ghostty"
       "emacs-mac"
     ];
   };

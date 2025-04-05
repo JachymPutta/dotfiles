@@ -21,7 +21,7 @@
   home = {
     username = "jachym";
     # homeDirectory = "/home/jachym";
-    stateVersion = "24.11";
+    stateVersion = "25.05";
     sessionVariables = { 
       EDITOR = "nvim";
       SHELL = "${pkgs.zsh}/bin/zsh";
@@ -83,7 +83,6 @@
     ] ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
       # Linux specific packages
       perf-tools
-      ghostty
     ] ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
       # Mac specific packages
     ];

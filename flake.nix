@@ -5,14 +5,12 @@
     nixpkgs.url = github:NixOS/nixpkgs;
     home-manager.url = github:nix-community/home-manager;
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    darwin.url = "github:lnl7/nix-darwin";
+    darwin.url = github:nix-darwin/nix-darwin;
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # Stable
-    # nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-24.11-darwin;
-    # home-manager.url = github:nix-community/home-manager/release-24.11;
-
-    ghostty.url = "git+ssh://git@github.com/ghostty-org/ghostty";
+    # nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-25.05-darwin;
+    # home-manager.url = github:nix-community/home-manager/release-25.05;
 
     nest-nvim = {
       url = "github:lionc/nest.nvim";
@@ -24,7 +22,6 @@
     let
       overlay = 
         system: final: prev: {
-          ghostty = inputs.ghostty.packages.${system}.default;
           vimPlugins = prev.vimPlugins // {
             nest-nvim = prev.vimUtils.buildVimPlugin {
               name = "nest.nvim";
