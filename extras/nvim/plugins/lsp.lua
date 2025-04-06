@@ -9,6 +9,19 @@ for _, lsp in ipairs(servers) do
   }
 end
 
+lspconfig.nil_ls.setup {
+  capabilities = capabilities,
+  cmd = { "nil" },
+  settings = {
+    ['nil'] = {
+      testSetting = 42,
+      formatting = {
+        command = { "nixfmt" },
+      },
+    },
+  },
+}
+
 vim.g.rustfmt_autosave = 1
 vim.g.rustaceanvim = {
   client = { server_capabilities = { inlayHintProvider = true } },

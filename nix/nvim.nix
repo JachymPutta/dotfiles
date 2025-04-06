@@ -31,7 +31,7 @@
       vim-vsnip
       vim-vsnip-integ
 
-      #Typst 
+      #Typst
       typst-vim
 
       # Copilot
@@ -61,21 +61,24 @@
       #       tree-sitter-python
       #     ]))
     ];
-    extraConfig = let
-      luaRequire = module: builtins.readFile (builtins.toString
-        ../extras/nvim + "/${module}.lua");
-      luaConfig = builtins.concatStringsSep "\n" (map luaRequire [
-        "core/mappings"
-        "core/init"
-        "plugins/telescope"
-        "plugins/treesitter"
-        "plugins/lsp"
-        "plugins/cmp"
-      ]);
-    in ''
-      lua << 
-      ${luaConfig}
-      
-    '';
+    extraConfig =
+      let
+        luaRequire = module: builtins.readFile (builtins.toString ../extras/nvim + "/${module}.lua");
+        luaConfig = builtins.concatStringsSep "\n" (
+          map luaRequire [
+            "core/mappings"
+            "core/init"
+            "plugins/telescope"
+            "plugins/treesitter"
+            "plugins/lsp"
+            "plugins/cmp"
+          ]
+        );
+      in
+      ''
+        lua << 
+        ${luaConfig}
+        
+      '';
   };
 }

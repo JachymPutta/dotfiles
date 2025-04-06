@@ -1,10 +1,13 @@
 { pkgs, home-manager, ... }:
-{ 
+{
   nix = {
     enable = false; # NOTE: nix is managed with the det-sys installation
     package = pkgs.nix;
     settings = {
-      "extra-experimental-features" = [ "nix-command" "flakes" ];
+      "extra-experimental-features" = [
+        "nix-command"
+        "flakes"
+      ];
     };
   };
 
@@ -14,8 +17,8 @@
       shell = pkgs.zsh;
     };
   };
-  
-  system = { 
+
+  system = {
     defaults = {
       dock.autohide = true;
       finder = {
@@ -25,7 +28,7 @@
       };
       screencapture.target = "clipboard";
     };
-    keyboard = { 
+    keyboard = {
       enableKeyMapping = true;
       remapCapsLockToControl = true;
     };
@@ -44,11 +47,23 @@
     # };
   };
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+  # security = {
+  #   pam = {
+  #     services = {
+  #       sudo_local = {
+  #         enableSudoTouchIdAuth = true;
+  #       };
+  #     };
+  #   };
+  # };
+
   homebrew = {
     enable = true;
     onActivation = {
       autoUpdate = true;
       upgrade = true;
+      cleanup = "zap"; # NOTE: removes all casks not listed here
     };
 
     taps = [
@@ -57,15 +72,19 @@
 
     casks = [
       "arc"
-      "steam"
+      "battle-net"
+      "curseforge"
       "discord"
-      "signal"
-      "visual-studio-code"
-      "slack"
-      "zoom"
-      "wacom-tablet"
-      "ghostty"
       "emacs-mac"
+      "ghostty"
+      "google-chrome"
+      "orbstack"
+      "signal"
+      "slack"
+      "steam"
+      "visual-studio-code"
+      "wacom-tablet"
+      "zoom"
     ];
   };
 }

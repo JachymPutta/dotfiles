@@ -8,11 +8,10 @@
     prefix = "C-a";
     extraConfig = builtins.readFile ../extras/tmux/tmux.conf;
     plugins = with pkgs.tmuxPlugins; [
-        better-mouse-mode
-        catppuccin
-        sensible
-        vim-tmux-navigator
+      better-mouse-mode
+      catppuccin
+      sensible
+      vim-tmux-navigator
     ];
   };
 }
-
