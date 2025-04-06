@@ -5,6 +5,7 @@ This is a repository to set up my personal development environment it includes n
 - [Yazi](https://www.yazi-rs.github.io/) terminal file manager
 - [Zsh](https://www.zsh.org/) as the shell
 - [Atuin](https:https://atuin.sh/) to synchronize shell history across multiple machines
+- [Ghostty](https://ghostty.org/) as the terminal emulator
 
 
 ## Install
@@ -23,7 +24,7 @@ nix-shell '<home-manager>' -A install
 ```
 
 3. Run the setup script
-    - On Linux: uncomment the `#homeDirectory = "/home/username";`
+    - **On Linux**: uncomment the `#homeDirectory = "/home/username";`
     - (First time)
     ```sh
     home-manager switch --flake .#jachym -L
@@ -32,7 +33,7 @@ nix-shell '<home-manager>' -A install
     ```sh
     update
     ```
-    - On MacOS
+    - **On MacOS**
     - (First time)
     ```sh
     nix run nix-darwin -- switch --flake ~/dotfiles
@@ -70,7 +71,7 @@ NOTE: This configuration is specific to my environment and will likely not work 
 ```
 If you want to use this configuration, you can fork this repository and make the following changes:
 - Replace any occurences of:
-    - My name (Jachym | Putta ) or any combination in:
+    - My name (Jachym):
         - `flake.nix`
         - `darwin.sh`
         - `home.nix`
@@ -79,7 +80,6 @@ If you want to use this configuration, you can fork this repository and make the
         - `./nix/zsh.nix`
     - My machine name in `./darwin.sh` and `./flake.nix`
     - My email in `./nix/git.nix`
-- (Optional) If you don't have access to Ghostty, comment out the `ghostty` package in `./flake.nix` and `./home.nix`
 - Adapt the keybindings in `./extras/nvim/core/mappings.lua` to your liking
 
 
