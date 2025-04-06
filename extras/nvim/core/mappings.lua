@@ -1,51 +1,52 @@
--- Set leader key
 vim.g.mapleader = " "
 
--- Keymaps
-require 'nest'.applyKeymaps {
-  { '<leader>', {
-    { 'f', {
-      { 'f', '<cmd> Telescope find_files <CR>' },
-      { 'w', '<cmd> Telescope live_grep <CR>' },
-      { 'o', '<cmd> Telescope oldfiles <CR>' },
-      -- { 's', '<cmd> Telescope current_buffer_fuzzy_find <CR>' }, NOTE: haven't been using this
-      { 'm', '<cmd> lua vim.lsp.buf.format { async = true } <CR>', "Format" },
-    },
-    },
-    { 'u', '<cmd> UndotreeToggle <CR>' },
-    { 'z', '<cmd> ZenMode <CR>' },
-    { 'c', {
-      { 'a', '<cmd> lua vim.lsp.buf.code_action() <CR>',   "Code action" },
-      { 'r', '<cmd> lua vim.diagnostic.open_float() <CR>', "Show full error" },
-    },
-    },
-    { 'ra', '<cmd> lua vim.lsp.buf.rename() <CR>',                             "Rename" },
-    { '/',  '<cmd> lua require("Comment.api").toggle.linewise.current() <CR>', "Toggle comment" },
-  },
-  },
-  { 'gd',    '<cmd> lua vim.lsp.buf.definition() <CR>',      "Go to definition" },
-  { 'gD',    '<cmd> lua vim.lsp.buf.declaration() <CR>',     "Go to declaration" },
-  { 'gi',    '<cmd> lua vim.lsp.buf.implementation() <CR>',  "Go to implementation" },
-  { 'gr',    '<cmd> lua vim.lsp.buf.references() <CR>',      "Go to references" },
-  { 'K',     '<cmd> lua vim.lsp.buf.hover() <CR>',           "Show hover" },
-  { 'gs',    '<cmd> lua vim.lsp.buf.signature_help() <CR>',  "Show signature help" },
+local wk = require("which-key")
 
-  { '<C-d>', '<C-d>zz' },
-  { '<C-u>', '<C-u>zz' },
-  { 'n',     'nzzzv',                                        "Move to next search result" },
-  { 'N',     'Nzzzv',                                        "Move to previous search result" },
-  { ';',     ':',                                            "enter command mode",            options = { nowait = true } },
-  { 'j',     'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down",                     options = { expr = true } },
-  { 'k',     'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', "Move up",                       options = { expr = true } },
-  { '<Esc>', '<cmd> noh <CR>',                               "Clear highlights" },
-  { '<C-k>', ':wincmd k<CR>' },
-  { '<C-j>', ':wincmd j<CR>' },
-  { '<C-h>', ':wincmd h<CR>' },
-  { '<C-l>', ':wincmd l<CR>' },
-  { 'z',     '<cmd>lua require("yazi").yazi()<CR>',          "Open Yazi" },
-  { mode = 'x', {
-    { '<', '<gv' },
-    { '>', '>gv' },
-    { 'p', 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } },
-  } },
-}
+-- Normal mode mappings (with leader key)
+wk.add({
+  { "<leader>/",  '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', desc = "Toggle Comment" },
+  { "<leader>c",  group = "Code" },
+  { "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>",                        desc = "Code Action" },
+  { "<leader>cr", "<cmd>lua vim.diagnostic.open_float()<CR>",                      desc = "Show Diagnostics" },
+  { "<leader>f",  group = "Find" },
+  { "<leader>ff", "<cmd>Telescope find_files<CR>",                                 desc = "Find Files" },
+  { "<leader>fm", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>",             desc = "Format" },
+  { "<leader>fo", "<cmd>Telescope oldfiles<CR>",                                   desc = "Recent Files" },
+  { "<leader>fw", "<cmd>Telescope live_grep<CR>",                                  desc = "Live Grep" },
+  { "<leader>ra", "<cmd>lua vim.lsp.buf.rename()<CR>",                             desc = "Rename" },
+  { "<leader>u",  "<cmd>UndotreeToggle<CR>",                                       desc = "Toggle UndoTree" },
+  { "<leader>z",  "<cmd>ZenMode<CR>",                                              desc = "Toggle ZenMode" },
+})
+
+-- Normal mode mappings (non-leader)
+wk.add({
+  { ";",     ":",                                            desc = "Command Mode" },
+  { "<C-d>", "<C-d>zz",                                      desc = "Scroll Down Centered" },
+  { "<C-h>", "<cmd>wincmd h<CR>",                            desc = "Window Left" },
+  { "<C-j>", "<cmd>wincmd j<CR>",                            desc = "Window Down" },
+  { "<C-k>", "<cmd>wincmd k<CR>",                            desc = "Window Up" },
+  { "<C-l>", "<cmd>wincmd l<CR>",                            desc = "Window Right" },
+  { "<C-u>", "<C-u>zz",                                      desc = "Scroll Up Centered" },
+  { "<Esc>", "<cmd>nohlsearch<CR>",                          desc = "Clear Highlights" },
+  { "K",     "<cmd>lua vim.lsp.buf.hover()<CR>",             desc = "Hover Documentation" },
+  { "N",     "Nzzzv",                                        desc = "Previous Search Result" },
+  { "gD",    "<cmd>lua vim.lsp.buf.declaration()<CR>",       desc = "Go to Declaration" },
+  { "gd",    "<cmd>lua vim.lsp.buf.definition()<CR>",        desc = "Go to Definition" },
+  { "gi",    "<cmd>lua vim.lsp.buf.implementation()<CR>",    desc = "Go to Implementation" },
+  { "gr",    "<cmd>lua vim.lsp.buf.references()<CR>",        desc = "Go to References" },
+  { "gs",    "<cmd>lua vim.lsp.buf.signature_help()<CR>",    desc = "Signature Help" },
+  { "j",     "v:count || mode(1)[0:1] == 'no' ? 'j' : 'gj'", desc = "Move Down",             expr = true, replace_keycodes = false },
+  { "k",     "v:count || mode(1)[0:1] == 'no' ? 'k' : 'gk'", desc = "Move Up",               expr = true, replace_keycodes = false },
+  { "n",     "nzzzv",                                        desc = "Next Search Result" },
+  { "z",     "<cmd>lua require('yazi').yazi()<CR>",          desc = "Open Yazi" },
+})
+
+-- Visual mode mappings
+wk.add(
+  {
+    mode = { "x" },
+    { "<", "<gv",                           desc = "Indent Left" },
+    { ">", ">gv",                           desc = "Indent Right" },
+    { "p", 'p:let @+=@0<CR>:let @"=@0<CR>', desc = "Paste without overwriting" },
+  }
+)

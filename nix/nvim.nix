@@ -7,13 +7,14 @@
       catppuccin-nvim
       plenary-nvim
       telescope-nvim
-      nest-nvim
       undotree
 
       # Convenience
       nvim-autopairs
       which-key-nvim
       zen-mode-nvim
+      mini-nvim
+      nvim-web-devicons
 
       # Lsp
       rustaceanvim
@@ -41,25 +42,30 @@
 
       # Comments
       comment-nvim
-      nvim-treesitter.withAllGrammars
 
-      # (nvim-treesitter.withPlugins
-      #   # tree sitter with language support
-      #   (plugins:
-      #     with plugins; [
-      #       tree-sitter-vim
-      #       tree-sitter-lua
-      #       tree-sitter-html
-      #       tree-sitter-css
-      #       tree-sitter-typst
-      #       tree-sitter-markdown
-      #       tree-sitter-bash
-      #       tree-sitter-nix
-      #       tree-sitter-rust
-      #       tree-sitter-json
-      #       tree-sitter-c
-      #       tree-sitter-python
-      #     ]))
+      # NOTE: this doesn't work because of ocamllex
+      # nvim-treesitter.withAllGrammars
+      (nvim-treesitter.withPlugins
+        # tree sitter with language support
+        (
+          plugins: with plugins; [
+            tree-sitter-vim
+            tree-sitter-lua
+            tree-sitter-html
+            tree-sitter-css
+            tree-sitter-typst
+            tree-sitter-markdown
+            tree-sitter-bash
+            tree-sitter-nix
+            tree-sitter-rust
+            tree-sitter-json
+            tree-sitter-c
+            tree-sitter-python
+            tree-sitter-zig
+            tree-sitter-ocaml
+          ]
+        )
+      )
     ];
     extraConfig =
       let
