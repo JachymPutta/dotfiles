@@ -22,14 +22,6 @@
     }:
     let
       overlay = system: final: prev: {
-        # vimPlugins = prev.vimPlugins // {
-        #   nest-nvim = prev.vimUtils.buildVimPlugin {
-        #     name = "nest.nvim";
-        #     pname = "nest-nvim";
-        #     src = inputs.nest-nvim;
-        #   };
-        # };
-
         neovim = nixpkgs.legacyPackages.${system}.neovim;
         neovim-unwrapped = nixpkgs.legacyPackages.${system}.neovim-unwrapped;
       };
@@ -84,7 +76,6 @@
             home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
 
-            # home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.jachym = {
               imports = [ ./home.nix ];
             };

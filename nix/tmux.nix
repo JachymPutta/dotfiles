@@ -12,6 +12,7 @@
       catppuccin
       sensible
       vim-tmux-navigator
+      yank
     ];
   };
 }
