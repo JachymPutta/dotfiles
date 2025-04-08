@@ -1,8 +1,9 @@
 -- Set basic options
-vim.loader.enable(true)
+-- vim.loader.enable(true)
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.signcolumn = "number"
+vim.g.mapleader = " "
 
 vim.opt.hlsearch = false                             -- Disable search highlighting
 vim.opt.expandtab = true                             -- Use spaces instead of tabs

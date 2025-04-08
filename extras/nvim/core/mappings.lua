@@ -1,8 +1,9 @@
-vim.g.mapleader = " "
-
 local wk = require("which-key")
 
--- Normal mode mappings (with leader key)
+wk.setup {
+  delay = 0,
+}
+
 wk.add({
   { "<leader>/",  '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', desc = "Toggle Comment" },
   { "<leader>c",  group = "Code" },
@@ -18,7 +19,6 @@ wk.add({
   { "<leader>z",  "<cmd>ZenMode<CR>",                                              desc = "Toggle ZenMode" },
 })
 
--- Normal mode mappings (non-leader)
 wk.add({
   { ";",     ":",                                            desc = "Command Mode" },
   { "<C-d>", "<C-d>zz",                                      desc = "Scroll Down Centered" },
@@ -41,12 +41,9 @@ wk.add({
   { "z",     "<cmd>lua require('yazi').yazi()<CR>",          desc = "Open Yazi" },
 })
 
--- Visual mode mappings
-wk.add(
-  {
-    mode = { "x" },
-    { "<", "<gv",                           desc = "Indent Left" },
-    { ">", ">gv",                           desc = "Indent Right" },
-    { "p", 'p:let @+=@0<CR>:let @"=@0<CR>', desc = "Paste without overwriting" },
-  }
-)
+wk.add({
+  mode = { "x" },
+  { "<", "<gv",                           desc = "Indent Left" },
+  { ">", ">gv",                           desc = "Indent Right" },
+  { "p", 'p:let @+=@0<CR>:let @"=@0<CR>', desc = "Paste without overwriting" },
+})
