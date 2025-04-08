@@ -70,10 +70,12 @@
         ccache
 
         # Rust -- keep project specific versions
-        # rust-analyzer
-        # rustc
-        # cargo
-        # just
+        rust-analyzer
+        rustfmt
+        rustc
+        cargo
+        clippy
+        just
 
         # Python
         (python3.withPackages (python-pkgs: [
