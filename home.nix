@@ -72,10 +72,8 @@
         # Rust -- keep project specific versions
         rust-analyzer
         rustfmt
-        rustc
         cargo
         clippy
-        just
 
         # Python
         (python3.withPackages (python-pkgs: [
