@@ -20,8 +20,6 @@
 
   programs.home-manager.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
-
   systemd.user.startServices = "sd-switch";
 
   home = {
@@ -99,6 +97,7 @@
       ]
       ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
         # Mac specific packages
+        dailies
       ];
   };
 
@@ -106,4 +105,5 @@
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
 
   home.file.".spacemacs".source = ./extras/emacs/spacemacs;
+  home.file.".dailies.toml".source = ./extras/dailies/dailies.toml;
 }

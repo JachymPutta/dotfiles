@@ -1,0 +1,3 @@
+dailies_dir = "/Users/jachym/Projects/dailies/tmp/dailies/"
+entry_template = "/Users/jachym/Projects/dailies/tmp/template.md"
+name_template = "%Y-%m-%d"

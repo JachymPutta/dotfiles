@@ -4,10 +4,14 @@
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
+      # Base
       catppuccin-nvim
       plenary-nvim
       telescope-nvim
       undotree
+
+      # Custom
+      dailies-nvim
 
       # Convenience
       nvim-autopairs
@@ -43,29 +47,26 @@
       # Comments
       comment-nvim
 
-      # NOTE: this doesn't work because of ocamllex
-      # nvim-treesitter.withAllGrammars
-      (nvim-treesitter.withPlugins
-        # tree sitter with language support
-        (
-          plugins: with plugins; [
-            tree-sitter-vim
-            tree-sitter-lua
-            tree-sitter-html
-            tree-sitter-css
-            tree-sitter-typst
-            tree-sitter-markdown
-            tree-sitter-bash
-            tree-sitter-nix
-            tree-sitter-rust
-            tree-sitter-json
-            tree-sitter-c
-            tree-sitter-python
-            tree-sitter-zig
-            tree-sitter-ocaml
-          ]
-        )
-      )
+      nvim-treesitter.withAllGrammars
+      # (nvim-treesitter.withPlugins
+      #   # tree sitter with language support
+      #   (
+      #     plugins: with plugins; [
+      #       tree-sitter-vim
+      #       tree-sitter-lua
+      #       tree-sitter-typst
+      #       tree-sitter-markdown
+      #       tree-sitter-bash
+      #       tree-sitter-nix
+      #       tree-sitter-rust
+      #       tree-sitter-json
+      #       tree-sitter-c
+      #       tree-sitter-python
+      #       tree-sitter-zig
+      #       tree-sitter-ocaml
+      #     ]
+      #   )
+      # )
     ];
     extraConfig =
       let
