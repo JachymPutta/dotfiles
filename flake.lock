@@ -7,11 +7,11 @@
         "oxalica": "oxalica"
       },
       "locked": {
-        "lastModified": 1744231492,
-        "narHash": "sha256-3mju5xRVUVYedsn4uULIUHLEfVrqxgEDs1OHM8b1F+8=",
+        "lastModified": 1744505157,
+        "narHash": "sha256-l4d/u5A350Y9ZeynfpVOBt/U3X5UaPPhqhJ2LY+rEmQ=",
         "owner": "JachymPutta",
         "repo": "dailies",
-        "rev": "f2e428b19a73c9f98212f2e05033cb3f2ba64ace",
+        "rev": "05770f189249e043eceff0374c86ab8a81fd8e68",
         "type": "github"
       },
       "original": {

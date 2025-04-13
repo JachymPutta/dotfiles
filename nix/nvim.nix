@@ -12,6 +12,7 @@
 
       # Custom
       dailies-nvim
+      obsidian-nvim
 
       # Convenience
       nvim-autopairs
@@ -75,10 +76,11 @@
           map luaRequire [
             "core/mappings"
             "core/init"
+            "plugins/cmp"
+            "plugins/lsp"
+            "plugins/obsidian"
             "plugins/telescope"
             "plugins/treesitter"
-            "plugins/lsp"
-            "plugins/cmp"
           ]
         );
       in

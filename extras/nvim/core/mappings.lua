@@ -17,6 +17,12 @@ wk.add({
   { "<leader>ra", "<cmd>lua vim.lsp.buf.rename()<CR>",                             desc = "Rename" },
   { "<leader>u",  "<cmd>UndotreeToggle<CR>",                                       desc = "Toggle UndoTree" },
   { "<leader>z",  "<cmd>ZenMode<CR>",                                              desc = "Toggle ZenMode" },
+  { "<leader>n",  group = "Notes" },
+  { "<leader>nc", "<cmd>ObsidianNew<CR>",                                          desc = "Create Note" },
+  { "<leader>nl", "<cmd>ObsidianLink<CR>",                                         desc = "Create Link" },
+  { "<leader>ni", "<cmd>ObsidianLinkNew<CR>",                                      desc = "Insert Link to Note" },
+  { "<leader>nw", "<cmd>ObsidianSearch<CR>",                                       desc = "Search in Notes" },
+  { "<leader>nd", "<cmd>RunDailies<CR>",                                           desc = "Create Daily" },
 })
 
 wk.add({
