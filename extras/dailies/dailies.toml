@@ -1,3 +1,5 @@
-dailies_dir = "Documents/obsidian/notes/dailies/"
-entry_template = "Documents/obsidian/templates/daily_template.md"
+dailies_dir = "~/Documents/obsidian/notes/dailies/"
+entry_template = "~/Documents/obsidian/templates/daily_template.md"
+prompt_path = "~/Documents/obsidian/templates/prompts.txt"
 date_template = "%Y-%m-%d"
+
