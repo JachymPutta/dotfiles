@@ -104,6 +104,5 @@
   # Extra configs
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
 
-  home.file.".spacemacs".source = ./extras/emacs/spacemacs;
   home.file.".dailies.toml".source = ./extras/dailies/dailies.toml;
 }

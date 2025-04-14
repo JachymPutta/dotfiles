@@ -57,12 +57,6 @@ run = [
 ]
 
 [[on-window-detected]]
-if.app-id = "org.gnu.Emacs"
-run = [
-  "move-node-to-workspace E",
-]
-
-[[on-window-detected]]
 if.app-id = "com.tinyspeck.slackmacgap"
 run = [
   "move-node-to-workspace C",

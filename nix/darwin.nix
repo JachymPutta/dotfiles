@@ -57,16 +57,11 @@
       cleanup = "zap"; # NOTE: removes all casks not listed here
     };
 
-    taps = [
-      "railwaycat/emacsmacport"
-    ];
-
     casks = [
       "arc"
       "battle-net"
       "curseforge"
       "discord"
-      "emacs-mac"
       "ghostty"
       "google-chrome"
       "orbstack"
