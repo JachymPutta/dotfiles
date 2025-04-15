@@ -34,30 +34,30 @@ vim.lsp.config('luals', {
 vim.lsp.config('ocamllsp', {
   cmd = { 'ocamllsp' },
   root_markers = { 'dune-project' },
-  filetypes = { 'ml' },
+  filetypes = { 'ocaml' },
 })
 
 vim.lsp.config('pyright', {
   cmd = { 'pyright' },
   root_markers = { 'setup.py', 'requirements.txt' },
-  filetypes = { 'py' },
+  filetypes = { 'python' },
 })
 
 vim.lsp.config('ruff', {
   cmd = { 'ruff' },
   root_markers = { 'setup.py', 'requirements.txt' },
-  filetypes = { 'py' },
+  filetypes = { 'python' },
 })
 
 vim.lsp.config('rust-analyzer', {
   cmd = { 'rust-analyzer' },
   root_markers = { '.git', 'Cargo.toml' },
-  filetypes = { 'rs' },
+  filetypes = { 'rust' },
 })
 
 vim.lsp.config('tinymist', {
   cmd = { 'tinymist' },
-  filetypes = { 'typ' },
+  filetypes = { 'typst' },
 })
 
 vim.lsp.config('zls', {
@@ -78,14 +78,14 @@ vim.lsp.enable({
   "zls",
 })
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
-    if client:supports_method('textDocument/completion') then
-      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('LspAttach', {
+--   callback = function(ev)
+--     local client = vim.lsp.get_client_by_id(ev.data.client_id)
+--     if client:supports_method('textDocument/completion') then
+--       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+--     end
+--   end,
+-- })
 
 require("crates").setup()
 
