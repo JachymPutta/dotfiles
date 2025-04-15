@@ -23,11 +23,11 @@
     "dailies-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1744239686,
-        "narHash": "sha256-cpPipIYbqjmYGpZAFDJxlquerwovCfn0WSbt6fFpZIM=",
+        "lastModified": 1744725760,
+        "narHash": "sha256-px5a98vhWuw7qiwcsZxUBzEO5TinXe0BMgaKZmBNYtY=",
         "owner": "JachymPutta",
         "repo": "dailies.nvim",
-        "rev": "62075e911e573b1fa9940b6de0440f45d8e58663",
+        "rev": "4507da852e8166f35598409656166629141e1d8c",
         "type": "github"
       },
       "original": {

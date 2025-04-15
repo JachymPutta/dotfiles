@@ -16,7 +16,21 @@ vim.opt.undofile = true                              -- Enable persistent undo
 vim.opt.statusline = "%f %h%m%r%=%-14.(%l,%c%V%) %P" -- Set statusline
 vim.opt_local.spell = true                           -- Enable spell checking
 vim.opt_local.spelllang = 'en_us'                    -- Set spell checking language
+
 vim.o.winborder = 'rounded'
+-- HACK: workaround https://github.com/nvim-telescope/telescope.nvim/issues/3436
+vim.api.nvim_create_autocmd("User", {
+  pattern = "TelescopeFindPre",
+  callback = function()
+    vim.opt_local.winborder = "none"
+    vim.api.nvim_create_autocmd("WinLeave", {
+      once = true,
+      callback = function()
+        vim.opt_local.winborder = "rounded"
+      end,
+    })
+  end,
+})
 
 vim.opt.conceallevel = 1
 
@@ -61,7 +75,7 @@ vim.g.clipboard = {
 -- With big projects it's better to keep the compilation and lsp
 -- directories separate, run this in the root fo the project
 -- export CARGO_TARGET_DIR='$proj_root/target_dirs/rustc
--- vim.fn.setenv("CARGO_TARGET_DIR", "target_dirs/ra")
+vim.fn.setenv("CARGO_TARGET_DIR", "target_dirs/ra")
 
 
 -- Autocmd to format on save

@@ -22,7 +22,7 @@ wk.add({
   { "<leader>nl", "<cmd>ObsidianLink<CR>",                                         desc = "Create Link" },
   { "<leader>ni", "<cmd>ObsidianLinkNew<CR>",                                      desc = "Insert Link to Note" },
   { "<leader>nw", "<cmd>ObsidianSearch<CR>",                                       desc = "Search in Notes" },
-  { "<leader>nd", "<cmd>RunDailies<CR>",                                           desc = "Create Daily" },
+  { "<leader>nd", "<cmd>Dailies<CR>",                                              desc = "Create Daily" },
 })
 
 wk.add({
