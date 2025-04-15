@@ -69,6 +69,8 @@
 
         # Rust
         rust-analyzer
+        clippy
+        rustfmt
 
         # Python
         (python3.withPackages (python-pkgs: [

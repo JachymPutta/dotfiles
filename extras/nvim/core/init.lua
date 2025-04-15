@@ -16,6 +16,7 @@ vim.opt.undofile = true                              -- Enable persistent undo
 vim.opt.statusline = "%f %h%m%r%=%-14.(%l,%c%V%) %P" -- Set statusline
 vim.opt_local.spell = true                           -- Enable spell checking
 vim.opt_local.spelllang = 'en_us'                    -- Set spell checking language
+vim.o.winborder = 'rounded'
 
 vim.opt.conceallevel = 1
 
