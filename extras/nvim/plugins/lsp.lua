@@ -1,60 +1,96 @@
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require 'lspconfig'
-
---- Use defaults for 'servers'
-local servers = { "lua_ls", "html", "tinymist", "ruff", "pyright", "clangd", "ocamllsp", "zls" }
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    capabilities = capabilities,
-  }
-end
-
-lspconfig.nil_ls.setup {
-  capabilities = capabilities,
-  cmd = { "nil" },
-  settings = {
-    ['nil'] = {
-      testSetting = 42,
-      formatting = {
-        command = { "nixfmt" },
-      },
-    },
-  },
-}
-
-vim.g.rustfmt_autosave = 1
-vim.g.rustaceanvim = {
-  client = { server_capabilities = { inlayHintProvider = true } },
-  tools = {
-    autoSetHints = true,
-    runnables = { use_telescope = true },
-    inlay_hints = {
-
-      only_current_line = false,
-      only_current_line_autocmd = "CursorMoved",
-
-      show_parameter_hints = true,
-
-      parameter_hints_prefix = "<- ",
-      other_hints_prefix = "=> ",
-
-      max_len_align = false,
-
-      max_len_align_padding = 1,
-
-      right_align = false,
-
-      right_align_padding = 7,
-      highlight = "DiagnosticSignWarn",
-    },
-  },
-}
-
-require 'crates'.setup {}
-
-require("copilot").setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
+vim.lsp.config('*', {
+  root_markers = { '.git', '.hg' },
 })
 
-require 'copilot_cmp'.setup {}
+vim.lsp.config('clangd', {
+  cmd = { 'clangd', '--background-index' },
+  root_markers = { 'compile_commands.json', 'compile_flags.txt' },
+  filetypes = { 'c', 'cpp' },
+})
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+vim.lsp.config('html', {
+  capabilities = capabilities,
+  root_markers = { 'index.html' },
+  filetypes = { 'html' },
+})
+
+
+vim.lsp.config('luals', {
+  cmd = { 'lua-language-server' },
+  filetypes = { 'lua' },
+  root_markers = { '.git', '.luarc.json', '.luarc.jsonc' },
+  settings = {
+    Lua = {
+      runtime = {
+        version = 'LuaJIT',
+      }
+    }
+  }
+})
+
+vim.lsp.config('ocamllsp', {
+  cmd = { 'ocamllsp' },
+  root_markers = { 'dune-project' },
+  filetypes = { 'ml' },
+})
+
+vim.lsp.config('pyright', {
+  cmd = { 'pyright' },
+  root_markers = { 'setup.py', 'requirements.txt' },
+  filetypes = { 'py' },
+})
+
+vim.lsp.config('ruff', {
+  cmd = { 'ruff' },
+  root_markers = { 'setup.py', 'requirements.txt' },
+  filetypes = { 'py' },
+})
+
+vim.lsp.config('rust-analyzer', {
+  cmd = { 'rust-analyzer' },
+  root_markers = { '.git', 'Cargo.toml' },
+  filetypes = { 'rs' },
+})
+
+vim.lsp.config('tinymist', {
+  cmd = { 'tinymist' },
+  filetypes = { 'typ' },
+})
+
+vim.lsp.config('zls', {
+  cmd = { 'zls' },
+  root_markers = { 'build.zig' },
+  filetypes = { 'zig' },
+})
+
+vim.lsp.enable({
+  "clangd",
+  "html",
+  "luals",
+  "ocamllsp",
+  "pyright",
+  "ruff",
+  "rust-analyzer",
+  "tinymist",
+  "zls",
+})
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client:supports_method('textDocument/completion') then
+      vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
+    end
+  end,
+})
+
+require("crates").setup()
+
+-- require("copilot").setup({
+--   suggestion = { enabled = false },
+--   panel = { enabled = false },
+-- })
+-- require("copilot_cmp").setup()

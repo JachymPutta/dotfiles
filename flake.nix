@@ -2,15 +2,16 @@
   description = "Close to a perfect configuration";
 
   inputs = {
+    # Stable
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-24.11-darwin";
+    # home-manager.url = "github:nix-community/home-manager/release-24.11";
+    # darwin.url = "github:nix-darwin/nix-darwin/nix-darwin-24.11";
+    # Unstable
     nixpkgs.url = "github:NixOS/nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.url = "github:nix-darwin/nix-darwin";
+    home-manager.inputs.nixpkgs.follows = "nixpkgs";
     darwin.inputs.nixpkgs.follows = "nixpkgs";
-
-    # Stable
-    # nixpkgs.url = github:NixOS/nixpkgs/nixpkgs-25.05-darwin;
-    # home-manager.url = github:nix-community/home-manager/release-25.05;
 
     # Custom
     dailies.url = "github:JachymPutta/dailies";

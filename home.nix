@@ -67,11 +67,8 @@
         libiconv
         ccache
 
-        # Rust -- keep project specific versions
+        # Rust
         rust-analyzer
-        rustfmt
-        cargo
-        clippy
 
         # Python
         (python3.withPackages (python-pkgs: [
@@ -90,6 +87,10 @@
 
         # Node is needed for copilot etc
         nodejs
+        jemalloc
+
+        # Zig
+        zls
       ]
       ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
         # Linux specific packages

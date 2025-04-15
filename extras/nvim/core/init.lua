@@ -60,7 +60,7 @@ vim.g.clipboard = {
 -- With big projects it's better to keep the compilation and lsp
 -- directories separate, run this in the root fo the project
 -- export CARGO_TARGET_DIR='$proj_root/target_dirs/rustc
-vim.fn.setenv("CARGO_TARGET_DIR", "target_dirs/ra")
+-- vim.fn.setenv("CARGO_TARGET_DIR", "target_dirs/ra")
 
 
 -- Autocmd to format on save

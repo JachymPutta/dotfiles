@@ -22,9 +22,6 @@
       nvim-web-devicons
 
       # Lsp
-      rustaceanvim
-      rust-vim
-      nvim-lspconfig
       nvim-dap
       crates-nvim
 
@@ -41,9 +38,9 @@
       typst-vim
 
       # Copilot
-      copilot-lua
-      copilot-cmp
-      copilot-vim
+      # copilot-lua
+      # copilot-cmp
+      # copilot-vim
 
       # Comments
       comment-nvim
