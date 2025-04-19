@@ -14,7 +14,6 @@
     darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     # Custom
-    dailies.url = "github:JachymPutta/dailies";
     dailies-nvim = {
       url = "github:JachymPutta/dailies.nvim";
       flake = false;
@@ -32,7 +31,6 @@
       overlay = system: final: prev: {
         neovim = nixpkgs.legacyPackages.${system}.neovim;
         neovim-unwrapped = nixpkgs.legacyPackages.${system}.neovim-unwrapped;
-        dailies = inputs.dailies.packages.${system}.dailies;
         vimPlugins = prev.vimPlugins // {
           dailies-nvim = prev.vimUtils.buildVimPlugin {
             name = "dailies-nvim";
