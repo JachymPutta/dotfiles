@@ -1,21 +1,5 @@
 {
   "nodes": {
-    "dailies-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1744725760,
-        "narHash": "sha256-px5a98vhWuw7qiwcsZxUBzEO5TinXe0BMgaKZmBNYtY=",
-        "owner": "JachymPutta",
-        "repo": "dailies.nvim",
-        "rev": "4507da852e8166f35598409656166629141e1d8c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "JachymPutta",
-        "repo": "dailies.nvim",
-        "type": "github"
-      }
-    },
     "darwin": {
       "inputs": {
         "nixpkgs": [
@@ -58,11 +42,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1745059406,
-        "narHash": "sha256-H7j0saoCo9SY669hRVhHboie3xMqg3pJfxZxMl01Js0=",
+        "lastModified": 1745265328,
+        "narHash": "sha256-401CAmPRMpCi9G0VMV9KDSRfHQQGf9J2xkRYvdMOVVw=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "1f84e10240dece7769a6abb14115b471c15d622b",
+        "rev": "47f7aede935496f10cf83b46798033f282abcaeb",
         "type": "github"
       },
       "original": {
@@ -73,7 +57,6 @@
     },
     "root": {
       "inputs": {
-        "dailies-nvim": "dailies-nvim",
         "darwin": "darwin",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
