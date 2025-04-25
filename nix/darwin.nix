@@ -27,6 +27,7 @@
         ShowPathbar = true;
       };
       screencapture.target = "clipboard";
+      controlcenter.BatteryShowPercentage = true;
     };
     keyboard = {
       enableKeyMapping = true;
