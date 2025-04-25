@@ -24,7 +24,6 @@
     let
       overlay = system: final: prev: {
         neovim = nixpkgs.legacyPackages.${system}.neovim;
-        neovim-unwrapped = nixpkgs.legacyPackages.${system}.neovim-unwrapped;
       };
     in
     {

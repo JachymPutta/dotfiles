@@ -2,6 +2,7 @@
 vim.loader.enable(true)
 vim.opt.number = true
 vim.opt.relativenumber = true
+vim.opt.signcolumn = "yes"
 vim.opt.signcolumn = "number"
 vim.g.mapleader = " "
 
@@ -33,10 +34,7 @@ vim.api.nvim_create_autocmd("User", {
 })
 
 vim.opt.conceallevel = 1
-
---
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50

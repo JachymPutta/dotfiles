@@ -100,7 +100,6 @@
       ]
       ++ pkgs.lib.optionals pkgs.stdenv.isDarwin [
         # Mac specific packages
-        dailies
       ];
   };
 
