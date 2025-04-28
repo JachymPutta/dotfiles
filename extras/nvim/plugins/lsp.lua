@@ -1,20 +1,35 @@
 vim.lsp.config('*', {
-  root_markers = { '.git', '.hg' },
+  capabilities = {
+    workspace = {
+      didChangeWatchedFiles = {
+        dynamicRegistration = true,
+      },
+    },
+    textDocument = {
+      completion = {
+        completionItem = {
+          snippetSupport = true,
+          resolveSupport = {
+            properties = {
+              'documentation',
+              'detail',
+              'additionalTextEdits',
+            },
+          },
+        },
+      },
+    },
+  },
+  flags = {
+    debounce_text_changes = 150,
+  },
+  root_markers = { '.git' },
 })
 
 vim.lsp.config('clangd', {
   cmd = { 'clangd', '--background-index' },
   root_markers = { 'compile_commands.json', 'compile_flags.txt' },
   filetypes = { 'c', 'cpp' },
-})
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-
-vim.lsp.config('html', {
-  capabilities = capabilities,
-  root_markers = { 'index.html' },
-  filetypes = { 'html' },
 })
 
 
@@ -31,22 +46,98 @@ vim.lsp.config('luals', {
   }
 })
 
-vim.lsp.config('ocamllsp', {
-  cmd = { 'ocamllsp' },
-  root_markers = { 'dune-project' },
-  filetypes = { 'ocaml' },
+
+vim.lsp.config('html', {
+  cmd = { 'vscode-html-language-server', '--stdio' },
+  filetypes = { 'html', 'templ' },
+  root_markers = { 'package.json', '.git' },
+  settings = {},
+  init_options = {
+    provideFormatter = true,
+    embeddedLanguages = { css = true, javascript = true },
+    configurationSection = { 'html', 'css', 'javascript' },
+  },
 })
 
+local function set_python_path(path)
+  local clients = vim.lsp.get_clients {
+    bufnr = vim.api.nvim_get_current_buf(),
+    name = 'pyright',
+  }
+  for _, client in ipairs(clients) do
+    if client.settings then
+      client.settings.python = vim.tbl_deep_extend('force', client.settings.python, { pythonPath = path })
+    else
+      client.config.settings = vim.tbl_deep_extend('force', client.config.settings, { python = { pythonPath = path } })
+    end
+    client.notify('workspace/didChangeConfiguration', { settings = nil })
+  end
+end
+
 vim.lsp.config('pyright', {
-  cmd = { 'pyright' },
-  root_markers = { 'setup.py', 'requirements.txt' },
+  cmd = { "pyright-langserver", "--stdio" },
+  root_markers = {
+    'pyproject.toml',
+    'setup.py',
+    'setup.cfg',
+    'requirements.txt',
+    'Pipfile',
+    'pyrightconfig.json',
+  },
   filetypes = { 'python' },
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { '*' },
+      },
+    },
+  },
+  on_attach = function(client, bufnr)
+    vim.api.nvim_buf_create_user_command(bufnr, 'LspPyrightOrganizeImports', function()
+      client:exec_cmd({
+        command = 'pyright.organizeimports',
+        arguments = { vim.uri_from_bufnr(bufnr) },
+      })
+    end, {
+      desc = 'Organize Imports',
+    })
+    vim.api.nvim_buf_create_user_command(bufnr, 'LspPyrightSetPythonPath', set_python_path, {
+      desc = 'Reconfigure pyright with the provided python path',
+      nargs = 1,
+      complete = 'file',
+    })
+  end,
 })
 
 vim.lsp.config('ruff', {
-  cmd = { 'ruff' },
-  root_markers = { 'setup.py', 'requirements.txt' },
+  cmd = { 'ruff', 'server' },
+  root_markers = {
+    'setup.py',
+    'pyproject.toml',
+    'ruff.toml',
+    '.ruff.toml',
+    'requirements.txt',
+  },
   filetypes = { 'python' },
+  init_options = {
+    settings = {
+      configurationPreference = 'filesystemFirst',
+      fixAll = true,
+      organizeImports = true,
+      lint = {
+        enable = true,
+        preview = true,
+      },
+      format = {
+        preview = true,
+      },
+    },
+  },
 })
 
 vim.lsp.config('rust-analyzer', {
@@ -96,3 +187,9 @@ require("crates").setup()
 --   panel = { enabled = false },
 -- })
 -- require("copilot_cmp").setup()
+--
+-- vim.lsp.config('ocamllsp', {
+--   cmd = { 'ocamllsp' },
+--   root_markers = { 'dune-project' },
+--   filetypes = { 'ocaml' },
+-- })
