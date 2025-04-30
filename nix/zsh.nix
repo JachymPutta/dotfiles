@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}:
+{ config, pkgs, inputs, ... }:
 
 {
   programs.zsh = {
@@ -21,7 +16,8 @@
       grep = "rg";
       htop = "btop";
       switch = "sudo nixos-rebuild switch --flake .#jachym -L";
-      update = "home-manager switch --flake ~/dotfiles/#jachym -L ";
+      update = "home-manager switch --flake ~/dotfiles/#jachym-x86 -L ";
+      updatearm = "home-manager switch --flake ~/dotfiles/#jachym-aarm -L ";
       darwin = "darwin-rebuild switch --flake ~/dotfiles ";
     };
 

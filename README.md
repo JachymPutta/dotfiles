@@ -27,7 +27,8 @@ nix-shell '<home-manager>' -A install
     - **On Linux**: uncomment the `#homeDirectory = "/home/username";`
     - (First time)
     ```sh
-    home-manager switch --flake .#jachym -L
+    home-manager switch --flake .#jachym-x86 -L #x86-64 linux
+    home-manager switch --flake .#jachym-aarch -L #aarch64 linux
     ```
     - (After the first time)
     ```sh

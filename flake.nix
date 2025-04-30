@@ -47,10 +47,20 @@
       };
 
       homeConfigurations = {
-        jachym = home-manager.lib.homeManagerConfiguration {
+        jachym-x86 = home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             overlays = [ (overlay "x86_64-linux") ];
             system = "x86_64-linux";
+          };
+          modules = [
+            ./home.nix
+          ];
+        };
+
+        jachym-aarch = home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs {
+            overlays = [ (overlay "aarch64-linux") ];
+            system = "aarch64-linux";
           };
           modules = [
             ./home.nix
