@@ -59,6 +59,20 @@ vim.lsp.config('html', {
   },
 })
 
+vim.lsp.config('nil_ls', {
+  cmd = { 'nil' },
+  filetypes = { 'nix' },
+  root_markers = { 'flake.nix' },
+  settings = {
+    ['nil'] = {
+      testSetting = 42,
+      formatting = {
+        command = { "nixfmt" },
+      },
+    },
+  },
+})
+
 local function set_python_path(path)
   local clients = vim.lsp.get_clients {
     bufnr = vim.api.nvim_get_current_buf(),
@@ -275,6 +289,7 @@ vim.lsp.enable({
   "clangd",
   "html",
   "luals",
+  "nil_ls",
   "ocamllsp",
   "pyright",
   "ruff",

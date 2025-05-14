@@ -42,11 +42,12 @@ Q = ["secondary", "main"]
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
 run = [
-  # FIX: this is a workaround for https://github.com/nikitabobko/AeroSpace/issues/68
+  # HACK: this is a workaround to make tabs work 
+  # copied from https://github.com/nikitabobko/AeroSpace/issues/68
   # this was also observed in:
   # - https://github.com/ghostty-org/ghostty/issues/1840
   # - https://github.com/ghostty-org/ghostty/issues/2006
-  "layout floating",
+  # "layout floating",
   "move-node-to-workspace T",
 ]
 

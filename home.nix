@@ -107,4 +107,5 @@
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
 
   home.file.".dailies.toml".source = ./extras/dailies/dailies.toml;
+  home.file.".aerospace.toml".source = ./extras/aerospace/aerospace.toml;
 }
