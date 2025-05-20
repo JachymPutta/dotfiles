@@ -44,7 +44,6 @@ wk.add({
   { "j",     "v:count || mode(1)[0:1] == 'no' ? 'j' : 'gj'", desc = "Move Down",             expr = true, replace_keycodes = false },
   { "k",     "v:count || mode(1)[0:1] == 'no' ? 'k' : 'gk'", desc = "Move Up",               expr = true, replace_keycodes = false },
   { "n",     "nzzzv",                                        desc = "Next Search Result" },
-  { "z",     "<cmd>lua require('yazi').yazi()<CR>",          desc = "Open Yazi" },
 })
 
 wk.add({
