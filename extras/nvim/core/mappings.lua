@@ -16,7 +16,7 @@ wk.add({
   { "<leader>fw", "<cmd>Telescope live_grep<CR>",                                  desc = "Live Grep" },
   { "<leader>ra", "<cmd>lua vim.lsp.buf.rename()<CR>",                             desc = "Rename" },
   { "<leader>u",  "<cmd>UndotreeToggle<CR>",                                       desc = "Toggle UndoTree" },
-  { "<leader>z",  "<cmd>ZenMode<CR>",                                              desc = "Toggle ZenMode" },
+  { "<leader>tn", "<cmd>Telescope colorscheme<CR>",                                desc = "Show color schemes" },
   { "<leader>n",  group = "Notes" },
   { "<leader>nc", "<cmd>ObsidianNew<CR>",                                          desc = "Create Note" },
   { "<leader>nl", "<cmd>ObsidianLink<CR>",                                         desc = "Create Link" },

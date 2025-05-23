@@ -17,7 +17,6 @@
       # Convenience
       nvim-autopairs
       which-key-nvim
-      zen-mode-nvim
       mini-nvim
       nvim-web-devicons
 
