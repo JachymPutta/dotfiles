@@ -47,7 +47,7 @@ vim.cmd([[colorscheme catppuccin]])
 -- Flag to check if clipboard has been set
 local clipboard_set = false
 -- Autocmd to set clipboard to use the system clipboard on first file open
-vim.api.nvim_create_autocmd("BufRead", {
+vim.api.nvim_create_autocmd("VimEnter", {
   callback = function()
     if not clipboard_set then
       vim.opt.clipboard:append("unnamedplus")

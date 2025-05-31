@@ -13,17 +13,17 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 
 
 [mode.main.binding]
-  ctrl-shift-1 = "workspace B"
-  ctrl-shift-2 = "workspace T"
-  ctrl-shift-3 = "workspace E"
-  ctrl-shift-4 = "workspace C"
-  ctrl-shift-q = "workspace Q"
+  alt-1 = "workspace B"
+  alt-2 = "workspace T"
+  alt-3 = "workspace E"
+  alt-4 = "workspace C"
+  alt-q = "workspace Q"
 
-  ctrl-cmd-1 = "move-node-to-workspace B"
-  ctrl-cmd-2 = "move-node-to-workspace T"
-  ctrl-cmd-3 = "move-node-to-workspace E"
-  ctrl-cmd-4 = "move-node-to-workspace C"
-  ctrl-cmd-q = "move-node-to-workspace Q"
+  alt-shift-1 = "move-node-to-workspace B"
+  alt-shift-2 = "move-node-to-workspace T"
+  alt-shift-3 = "move-node-to-workspace E"
+  alt-shift-4 = "move-node-to-workspace C"
+  alt-shift-q = "move-node-to-workspace Q"
 
   alt-h = "focus left"
   alt-j = "focus down"
@@ -31,6 +31,9 @@ enable-normalization-opposite-orientation-for-nested-containers = true
   alt-l = "focus right"
 
   alt-tab = "workspace-back-and-forth"
+
+  alt-minus = 'resize smart -50'
+  alt-equal = 'resize smart +50'
 
 [workspace-to-monitor-force-assignment]
 B = "main"
