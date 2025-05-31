@@ -70,7 +70,6 @@
       "discord"
       "ghostty"
       "google-chrome"
-      "jellybeansoup-netflix"
       "orbstack"
       "signal"
       "slack"
