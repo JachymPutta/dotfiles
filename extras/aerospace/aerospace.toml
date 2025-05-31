@@ -55,10 +55,17 @@ run = [
 ]
 
 [[on-window-detected]]
-if.app-id = "company.thebrowser.Browser"
+if.app-id = "app.zen-browser.zen"
 run = [
   "move-node-to-workspace B",
 ]
+
+[[on-window-detected]]
+if.app-id = "net.battle.app"
+run = [
+  "move-node-to-workspace E",
+]
+
 
 [[on-window-detected]]
 if.app-id = "com.tinyspeck.slackmacgap"

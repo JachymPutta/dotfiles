@@ -36,17 +36,17 @@
   };
 
   # services = {
-    # NOTE: this wasn't working for some reason -- switched to brew
-    # aerospace = {
-    #   enable = true;
-    #   package = pkgs.aerospace;
-    #   settings = pkgs.lib.importTOML ../extras/aerospace/aerospace.toml;
-    # };
-    # Tailscale installs the CLI version, the GUI is installed via App Store
-    # tailscale = {
-    #   enable = true;
-    #   package = pkgs.tailscale;
-    # };
+  # NOTE: this wasn't working for some reason -- switched to brew
+  # aerospace = {
+  #   enable = true;
+  #   package = pkgs.aerospace;
+  #   settings = pkgs.lib.importTOML ../extras/aerospace/aerospace.toml;
+  # };
+  # Tailscale installs the CLI version, the GUI is installed via App Store
+  # tailscale = {
+  #   enable = true;
+  #   package = pkgs.tailscale;
+  # };
   # };
 
   security.pam.services.sudo_local.touchIdAuth = true;
@@ -65,18 +65,19 @@
 
     casks = [
       "aerospace"
-      "arc"
       "battle-net"
       "curseforge"
       "discord"
       "ghostty"
       "google-chrome"
+      "jellybeansoup-netflix"
       "orbstack"
       "signal"
       "slack"
       "steam"
       "visual-studio-code"
       "wacom-tablet"
+      "zen"
       "zoom"
     ];
   };
