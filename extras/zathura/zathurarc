@@ -64,4 +64,4 @@ set recolor-darkcolor           rgba(248,248,242,1)   # Foreground
 #
 # Startup options
 #
-set recolor false
+set recolor true

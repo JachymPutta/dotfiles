@@ -1,3 +1,6 @@
+-- Making it work on Mac:
+-- stolen from https://gist.github.com/agzam/76d761804330cc8c4600fccda952ed1c
+
 on activate_open_instance(quoted_win_title, unquoted_win_title, is_first_time)
   tell application "System Events"
     set zathuraProcList to a reference to (every process whose name is "zathura")
