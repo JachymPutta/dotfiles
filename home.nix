@@ -105,6 +105,7 @@
 
   # Extra configs
   xdg.configFile."ghostty/config".source = ./extras/ghostty/config;
+  xdg.configFile."zathura/zathurarc".source = ./extras/zathura/zathurarc;
 
   home.file.".dailies.toml".source = ./extras/dailies/dailies.toml;
   home.file.".aerospace.toml".source = ./extras/aerospace/aerospace.toml;
