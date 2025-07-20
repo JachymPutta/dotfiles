@@ -50,6 +50,9 @@
         tldr
         dust
         carapace
+        fd
+        xh
+        presenterm
 
         # File management
         yazi

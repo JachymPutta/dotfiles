@@ -35,6 +35,10 @@
     };
   };
 
+  environment.systemPackages = with pkgs; [
+    coreutils
+  ];
+
   # services = {
   # NOTE: this wasn't working for some reason -- switched to brew
   # aerospace = {

@@ -20,7 +20,6 @@ wk.add({
   { "<leader>n",  group = "Notes" },
   { "<leader>nc", "<cmd>ObsidianNew<CR>",                                          desc = "Create Note" },
   { "<leader>nl", "<cmd>ObsidianLink<CR>",                                         desc = "Create Link" },
-  { "<leader>ni", "<cmd>ObsidianLinkNew<CR>",                                      desc = "Insert Link to Note" },
   { "<leader>nw", "<cmd>ObsidianSearch<CR>",                                       desc = "Search in Notes" },
   { "<leader>nd", "<cmd>Dailies<CR>",                                              desc = "Create Daily" },
 })
@@ -51,4 +50,9 @@ wk.add({
   { "<", "<gv",                           desc = "Indent Left" },
   { ">", ">gv",                           desc = "Indent Right" },
   { "p", 'p:let @+=@0<CR>:let @"=@0<CR>', desc = "Paste without overwriting" },
+})
+
+wk.add({
+  mode = { "v" },
+  { "ni", "<cmd>ObsidianLinkNew<CR>", desc = "Insert Link to Note" },
 })
