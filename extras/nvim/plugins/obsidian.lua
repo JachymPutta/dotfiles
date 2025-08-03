@@ -52,8 +52,7 @@ require("obsidian").setup({
     vim.fn.jobstart { "qlmanage", "-p", img } -- Mac OS quick look preview
   end,
 
-  use_advanced_uri = false,
-  open_app_foreground = false,
+  legacy_commands = false,
 
   picker = {
     name = "telescope.nvim",

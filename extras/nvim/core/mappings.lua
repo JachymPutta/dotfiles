@@ -18,9 +18,9 @@ wk.add({
   { "<leader>u",  "<cmd>UndotreeToggle<CR>",                                       desc = "Toggle UndoTree" },
   { "<leader>tn", "<cmd>Telescope colorscheme<CR>",                                desc = "Show color schemes" },
   { "<leader>n",  group = "Notes" },
-  { "<leader>nc", "<cmd>ObsidianNew<CR>",                                          desc = "Create Note" },
-  { "<leader>nl", "<cmd>ObsidianLink<CR>",                                         desc = "Create Link" },
-  { "<leader>nw", "<cmd>ObsidianSearch<CR>",                                       desc = "Search in Notes" },
+  { "<leader>nc", "<cmd>Obsidian new<CR>",                                         desc = "Create Note" },
+  { "<leader>nl", "<cmd>Obsidian link<CR>",                                        desc = "Create Link" },
+  { "<leader>nw", "<cmd>Obsidian search<CR>",                                      desc = "Search in Notes" },
   { "<leader>nd", "<cmd>Dailies<CR>",                                              desc = "Create Daily" },
 })
 
@@ -54,5 +54,5 @@ wk.add({
 
 wk.add({
   mode = { "v" },
-  { "ni", "<cmd>ObsidianLinkNew<CR>", desc = "Insert Link to Note" },
+  { "ni", "<cmd>Obsidian link_new<CR>", desc = "Insert Link to Note" },
 })
