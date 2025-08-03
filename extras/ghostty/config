@@ -1,6 +1,6 @@
 keybind = super+comma=open_config
 
-# Movement	w
+# Movement
 keybind = ctrl+shift+l=goto_split:right
 keybind = ctrl+shift+j=goto_split:bottom
 keybind = ctrl+shift+h=goto_split:left
