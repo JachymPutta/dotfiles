@@ -42,7 +42,7 @@
       ];
     };
 
-    initExtra = ''
+    initContent = ''
       ${builtins.readFile ../extras/zsh/zshrc}
       ${builtins.readFile ../extras/zsh/zsh_git}
     '';

@@ -17,8 +17,8 @@
       shell = pkgs.zsh;
     };
   };
-
   system = {
+    primaryUser = "jachym";
     defaults = {
       dock.autohide = true;
       finder = {
