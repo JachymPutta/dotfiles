@@ -63,18 +63,21 @@ require("obsidian").setup({
   search_max_lines = 1000,
   open_notes_in = "current",
 
+  checkbox = {
+    order = {
+      -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
+      [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+      ["x"] = { char = "", hl_group = "ObsidianDone" },
+      -- [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+      -- ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+      -- ["!"] = { char = "", hl_group = "ObsidianImportant" },
+    },
+  },
+
   ui = {
     enable = true,          -- set to false to disable all additional syntax features
     update_debounce = 200,  -- update delay after a text change (in milliseconds)
     max_file_length = 5000, -- disable UI features for files with more than this many lines
-    checkboxes = {
-      -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
-      [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-      ["x"] = { char = "", hl_group = "ObsidianDone" },
-      [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-      ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-      ["!"] = { char = "", hl_group = "ObsidianImportant" },
-    },
     bullets = { char = "•", hl_group = "ObsidianBullet" },
     external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
     reference_text = { hl_group = "ObsidianRefText" },

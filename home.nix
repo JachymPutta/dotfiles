@@ -1,21 +1,20 @@
 {
-  config,
   pkgs,
-  inputs,
   ...
 }:
 
 {
   imports = [
     ./nix/atuin.nix
+    ./nix/carapace.nix
+    ./nix/direnv.nix
     ./nix/git.nix
+    ./nix/nushell.nix
     ./nix/nvim.nix
+    ./nix/tmux.nix
+    ./nix/yazi.nix
     ./nix/zoxide.nix
     ./nix/zsh.nix
-    ./nix/yazi.nix
-    ./nix/direnv.nix
-    ./nix/tmux.nix
-
   ];
 
   programs.home-manager.enable = true;
@@ -28,7 +27,7 @@
     stateVersion = "25.05";
     sessionVariables = {
       EDITOR = "nvim";
-      SHELL = "${pkgs.zsh}/bin/zsh";
+      SHELL = "${pkgs.nushell}/bin/nu";
     };
     packages =
       with pkgs;
@@ -39,8 +38,9 @@
         wget
 
         # Shell
-        ripgrep
         zsh
+        nushell
+        ripgrep
         atuin
         zoxide
         eza

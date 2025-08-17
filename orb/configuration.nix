@@ -49,7 +49,8 @@
   # This being `true` leads to a few nasty bugs, change at your own risk!
   users.mutableUsers = false;
   programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
+  programs.nushell.enable = true;
+  users.defaultUserShell = pkgs.nushell;
 
   time.timeZone = "America/New_York";
 

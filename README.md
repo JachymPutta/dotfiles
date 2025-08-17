@@ -3,7 +3,7 @@ This is a repository to set up my personal development environment it includes n
 - [Nix](https://nixos.org/) as the package manager
 - [NeoVim](https://www.neovim.io/) as the text editor
 - [Yazi](https://www.yazi-rs.github.io/) terminal file manager
-- [Zsh](https://www.zsh.org/) as the shell
+- [Nushell](https://www.nushell.sh/) as the shell
 - [Atuin](https:https://atuin.sh/) to synchronize shell history across multiple machines
 - [Ghostty](https://ghostty.org/) as the terminal emulator
 
@@ -79,6 +79,7 @@ If you want to use this configuration, you can fork this repository and make the
         - `./nix/darwin.nix`
         - `./nix/git.nix`
         - `./nix/zsh.nix`
+        - `./nix/nushell.nix`
     - My machine name in `./darwin.sh` and `./flake.nix`
     - My email in `./nix/git.nix`
 - Adapt the keybindings in `./extras/nvim/core/mappings.lua` to your liking

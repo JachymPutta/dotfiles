@@ -1,4 +1,7 @@
-{ pkgs, home-manager, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   nix = {
     enable = false; # NOTE: nix is managed with the det-sys installation
@@ -14,7 +17,7 @@
   users.users = {
     jachym = {
       home = "/Users/jachym";
-      shell = pkgs.zsh;
+      shell = pkgs.nushell;
     };
   };
   system = {
