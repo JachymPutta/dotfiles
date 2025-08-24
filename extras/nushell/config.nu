@@ -15,7 +15,7 @@ $env.PATH = [
     "/bin"
     "/sbin"
 ]
-$env.EDITOR = "VIM"
+$env.EDITOR = "NVIM"
 $env.NIX_PATH = [
     $"darwin-config=($env.HOME)/.nixpkgs/darwin-configuration.nix"
     "/nix/var/nix/profiles/per-user/root/channels"
