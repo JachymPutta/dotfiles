@@ -11,6 +11,7 @@
     ./nix/git.nix
     ./nix/nushell.nix
     ./nix/nvim.nix
+    ./nix/starship.nix
     ./nix/tmux.nix
     ./nix/yazi.nix
     ./nix/zoxide.nix
@@ -53,6 +54,7 @@
         fd
         xh
         presenterm
+        starship
 
         # File management
         yazi
