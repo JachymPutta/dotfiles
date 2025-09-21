@@ -64,23 +64,8 @@ require("obsidian").setup({
   open_notes_in = "current",
 
   -- NOTE: switch to this once ui.checkboxes is fully deprecated
-  -- checkbox = {
-  --   order = {
-  --     -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
-  --     [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
-  --     ["x"] = { char = "", hl_group = "ObsidianDone" },
-  --     [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-  --     ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-  --     ["!"] = { char = "", hl_group = "ObsidianImportant" },
-  --   },
-  -- },
-
-  ui = {
-    enable = true,          -- set to false to disable all additional syntax features
-    update_debounce = 200,  -- update delay after a text change (in milliseconds)
-    max_file_length = 5000, -- disable UI features for files with more than this many lines
-    bullets = { char = "•", hl_group = "ObsidianBullet" },
-    checkboxes = {
+  checkbox = {
+    order = {
       -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
       [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
       ["x"] = { char = "", hl_group = "ObsidianDone" },
@@ -88,6 +73,21 @@ require("obsidian").setup({
       ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
       ["!"] = { char = "", hl_group = "ObsidianImportant" },
     },
+  },
+
+  ui = {
+    enable = true,          -- set to false to disable all additional syntax features
+    update_debounce = 200,  -- update delay after a text change (in milliseconds)
+    max_file_length = 5000, -- disable UI features for files with more than this many lines
+    bullets = { char = "•", hl_group = "ObsidianBullet" },
+    -- checkboxes = {
+    --   -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
+    --   [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+    --   ["x"] = { char = "", hl_group = "ObsidianDone" },
+    --   [">"] = { char = "", hl_group = "ObsidianRightArrow" },
+    --   ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
+    --   ["!"] = { char = "", hl_group = "ObsidianImportant" },
+    -- },
     external_link_icon = { char = "", hl_group = "ObsidianExtLinkIcon" },
     reference_text = { hl_group = "ObsidianRefText" },
     highlight_text = { hl_group = "ObsidianHighlightText" },

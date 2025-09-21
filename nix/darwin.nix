@@ -73,6 +73,7 @@
     casks = [
       "aerospace"
       "battle-net"
+      "citrix-workspace"
       "curseforge"
       "discord"
       "ghostty"
@@ -83,6 +84,7 @@
       "steam"
       "visual-studio-code"
       "wacom-tablet"
+      "webex"
       "zen"
       "zoom"
     ];
