@@ -68,7 +68,7 @@
         };
       };
 
-      darwinConfigurations."Jachyms-MacBook-Pro" = darwin.lib.darwinSystem {
+      darwinConfigurations."Jachyms-MacBook-Air" = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         pkgs = import nixpkgs {
           overlays = [ (overlay "aarch64-darwin") ];
