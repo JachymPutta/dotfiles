@@ -31,6 +31,7 @@
       };
       screencapture.target = "clipboard";
       controlcenter.BatteryShowPercentage = true;
+      NSGlobalDomain."com.apple.mouse.tapBehavior" = 1;
     };
     keyboard = {
       enableKeyMapping = true;
