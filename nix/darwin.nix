@@ -86,6 +86,7 @@
       "visual-studio-code"
       "wacom-tablet"
       "webex"
+      "windows-app"
       "zen"
       "zoom"
     ];
